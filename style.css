@@ -11,17 +11,106 @@
   align-items: center;
 }
 
+#lockedTitle {
+  font-size: 6rem;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  transition: all 1s;
+  opacity: 0;
+}
+
 .room {
+  background-image: url(/startRoom.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2rem;
   background-color: rgb(177, 177, 177);
-  height: 70svh;
+  height: 50svh;
   width: 50vw;
 }
 
-#gameTitle {
-  font-size: 3.5rem;
+#backArrow {
+  cursor: pointer;
+}
+
+.blueDoor {
+  cursor: pointer;
+  position: absolute;
+  left: 35%;
+  top: 46.5%;
+  transition: all 1s;
+}
+
+.blueDoorOpen {
+  position: absolute;
+  left: 35%;
+  top: 46.5%;
+}
+
+.blueDoor:hover {
+  left: 34.2%;
+  transform: rotate3d(0, 30, 0, 45deg);
+}
+
+.redDoor {
+  cursor: pointer;
+  position: absolute;
+  left: 45%;
+  top: 46.5%;
+  transition: all 1s;
+}
+
+.redDoorOpen {
+  position: absolute;
+  left: 45%;
+  top: 46.5%;
+}
+
+.redDoor:hover {
+  left: 44.2%;
+  transform: rotate3d(0, 30, 0, 45deg);
+}
+
+.brownDoor {
+  cursor: pointer;
+  position: absolute;
+  left: 55%;
+  top: 46.5%;
+  transition: all 1s;
+}
+
+.brownDoorOpen {
+  position: absolute;
+  left: 55%;
+  top: 46.5%;
+}
+
+.brownDoor:hover {
+  left: 54.2%;
+  transform: rotate3d(0, 30, 0, 45deg);
+}
+
+.greenDoor {
+  cursor: pointer;
+  position: absolute;
+  left: 65%;
+  top: 46.5%;
+  transition: all 1s;
+}
+
+.greenDoorOpen {
+  position: absolute;
+  left: 65%;
+  top: 46.5%;
+}
+
+.greenDoor:hover {
+  left: 64.2%;
+  transform: rotate3d(0, 30, 0, 45deg);
 }
