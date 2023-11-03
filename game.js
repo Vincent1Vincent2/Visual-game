@@ -77,19 +77,25 @@ function hideLockedText() {
 brownDoor.addEventListener("click", function () {
   brownRoomBack.style.opacity = "1";
   brownRoomBack.style.transition = "opacity 3.5s";
-  blueDoorBg.style.display = "none";
-  blueDoor.style.display = "none";
-  redDoorBg.style.display = "none";
-  redDoor.style.display = "none";
-  greenDoorBg.style.display = "none";
-  greenDoor.style.display = "none";
+  blueDoorBg.style.visibility = "hidden";
+  blueDoor.style.visibility = "hidden";
+  blueDoor.style.opacity = 0;
+  blueDoorBg.style.opacity = 0;
+  redDoorBg.style.visibility = "hidden";
+  redDoor.style.visibility = "hidden";
+  redDoor.style.opacity = 0;
+  redDoorBg.style.opacity = 0;
+  greenDoorBg.style.visibility = "hidden";
+  greenDoor.style.visibility = "hidden";
+  greenDoor.style.opacity = 0;
+  greenDoorBg.style.opacity = 0;
   brownDoorBg.style.opacity = 0;
   brownDoor.style.opacity = 0;
   startRoomBg.style.visibility = "hidden";
   startRoomBg.style.opacity = 0;
   startRoomBg.style.transition = "opacity .8s";
-  brownDoor.style.transition = "opacity .8s";
-  brownDoorBg.style.transition = "opacity .8s";
+  brownDoor.style.transition = "opacity 1s";
+  brownDoorBg.style.transition = "opacity 1s";
   displayBackArrow();
   displayObjects();
   updateText(2);
@@ -118,6 +124,56 @@ function displayObjects() {
   }, 800);
 }
 
+brownRoomBack.addEventListener("click", function () {
+  setTimeout(function () {
+    brownRoomBack.style.opacity = "0";
+    brownRoomBack.style.transition = "opacity .8s";
+    blueDoor.style.visibility = "visible";
+    blueDoorBg.style.visibility = "visible";
+    blueDoor.style.opacity = 1;
+    blueDoorBg.style.opacity = 1;
+    blueDoor.style.transition = "opacity .5s";
+    blueDoorBg.style.transition = "opacity .5s";
+    redDoorBg.style.visibility = "visible";
+    redDoor.style.visibility = "visible";
+    redDoor.style.opacity = 1;
+    redDoorBg.style.opacity = 1;
+    redDoor.style.transition = "opacity .9s";
+    redDoorBg.style.transition = "opacity .9s";
+    greenDoorBg.style.visibility = "visible";
+    greenDoor.style.visibility = "visible";
+    greenDoor.style.opacity = 1;
+    greenDoorBg.style.opacity = 1;
+    greenDoor.style.transition = "opacity 1.2s";
+    greenDoorBg.style.transition = "opacity 1.2s";
+    brownDoorBg.style.opacity = 1;
+    brownDoor.style.opacity = 1;
+    brownDoor.style.transition = "opacity 1.5s";
+    startRoomBg.style.visibility = "visible";
+    startRoomBg.style.opacity = 1;
+    startRoomBg.style.transition = "opacity 1.5s";
+  }, 800);
+  hideObjects();
+  updateText(1);
+});
+
+function hideObjects() {
+  setTimeout(function () {
+    brownRoomBg.style.visibility = "hidden";
+    brownRoomBg.style.opacity = 0;
+    brownRoomBg.style.transition = "opacity 1.5s";
+    bookshelf.style.visibility = "hidden";
+    bookshelf.style.opacity = 0;
+    bookshelf.style.transition = "opacity 1.5s";
+    desk.style.visibility = "hidden";
+    desk.style.opacity = 0;
+    desk.style.transition = "opacity 1.5s";
+    piano.style.visibility = "hidden";
+    piano.style.opacity = 0;
+    piano.style.transition = "opacity 1.5s";
+  }, 500);
+}
+
 bookshelf.addEventListener("click", function () {
   exploreBookshelf.style.visibility = "visible";
   exploreBookshelf.style.opacity = 1;
@@ -132,6 +188,13 @@ bookshelf.addEventListener("click", function () {
   piano.style.opacity = 0;
   piano.style.transition = "opacity 1.5s";
   updateText(3);
+});
+
+blueKey.addEventListener("click", function () {
+  blueKey.style.top = "20%";
+  blueKey.style.left = "30%";
+  blueKey.style.scale = 1;
+  blueKey.style.transition = "all 2s";
 });
 
 desk.addEventListener("click", function () {
@@ -151,13 +214,6 @@ desk.addEventListener("click", function () {
   piano.style.opacity = 1;
   piano.style.transition = "opacity 1.5s";
   updateText(4);
-});
-
-blueKey.addEventListener("click", function () {
-  blueKey.style.top = "20%";
-  blueKey.style.left = "30%";
-  blueKey.style.scale = 1;
-  blueKey.style.transition = "all 2s";
 });
 
 piano.addEventListener("click", function () {

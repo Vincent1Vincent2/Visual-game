@@ -141,7 +141,7 @@
   top: 46.5%;
 }
 
-#redDoor:hover {
+#redDoor.open {
   left: 44.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }
@@ -179,7 +179,7 @@
   top: 46.5%;
 }
 
-#greenDoor:hover {
+#greenDoor.open {
   left: 64.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }
