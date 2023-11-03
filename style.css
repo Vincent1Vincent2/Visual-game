@@ -27,7 +27,7 @@
 }
 
 #room {
-  background-image: url(/startRoom.png);
+  background-image: url(/imgs/backgrounds/startRoom.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,7 +40,7 @@
 }
 
 #brownRoom {
-  background-image: url(/brownRoomBg.png);
+  background-image: url(/imgs/backgrounds/brownRoomBg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
