@@ -52,6 +52,10 @@
   visibility: hidden;
 }
 
+.arrowScale:hover {
+  scale: 1.5;
+}
+
 #brownRoomBack {
   cursor: pointer;
   position: absolute;
@@ -59,8 +63,20 @@
   left: 27%;
   visibility: hidden;
 }
-#brownRoomBack:hover {
-  scale: 1.5;
+
+#brownRoomBackPD {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+#brownRoomBackP {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
 }
 
 #inventory {
@@ -223,6 +239,13 @@
   position: absolute;
   top: 55%;
   left: 44%;
+  visibility: hidden;
+}
+
+#usedDesk {
+  position: absolute;
+  left: 45%;
+  top: 60%;
   visibility: hidden;
 }
 

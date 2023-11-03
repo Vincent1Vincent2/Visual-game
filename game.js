@@ -1,14 +1,15 @@
-const lockedDoorText = document.getElementById("lockedTitle");
-const inventory = document.getElementById("inventory");
-const brownRoomBack = document.getElementById("brownRoomBack");
-const blueKey = document.getElementById("blueKey");
-const redKey = document.getElementById("redKey");
-const greenKey = document.getElementById("greenKey");
-const lockPick = document.getElementById("lockPick");
-const noteSheet = document.getElementById("noteSheet");
+const lockedDoorText = document.getElementById("lockedTitle"); //TEXT
+const inventory = document.getElementById("inventory"); //BACKGROUND
+const brownRoomBack = document.getElementById("brownRoomBack"); //CLICK (BACK ARROW)
+const brownRoomBackPB = document.getElementById("brownRoomBackPB"); //CLICK (BACK ARROW)
+const brownRoomBackP = document.getElementById("brownRoomBackP"); //CLICK (BACK ARROW)
+const blueKey = document.getElementById("blueKey"); //Click (ITEM)
+const redKey = document.getElementById("redKey"); //Click (ITEM)
+const greenKey = document.getElementById("greenKey"); //Click (ITEM)
+const lockPick = document.getElementById("lockPick"); //Click (ITEM
+const noteSheet = document.getElementById("noteSheet"); //Click (ITEM
 const startRoomBg = document.getElementById("room"); //SCENE
 const brownRoomBg = document.getElementById("brownRoom"); //SCENE
-const brownRoomback = document.getElementById("backArrow"); // Click
 const blueDoorBg = document.getElementById("blueDoorOpen"); //BACKGROUND
 const blueDoor = document.getElementById("blueDoor"); // Click
 const redDoorBg = document.getElementById("redDoorOpen"); //BACKGROUND
@@ -17,13 +18,15 @@ const brownDoorBg = document.getElementById("brownDoorOpen"); //BACKGROUND
 const brownDoor = document.getElementById("brownDoor"); // Click
 const greenDoorBg = document.getElementById("greenDoorOpen"); //BACKGROUND
 const greenDoor = document.getElementById("greenDoor"); // Click
-const bookshelf = document.getElementById("bookshelf"); //Click
-const exploreBookshelf = document.getElementById("exploreBookshelf");
-const desk = document.getElementById("desk"); //Click
-const deskOpen = document.getElementById("deskOpen");
-const explorePiano = document.getElementById("pianoNo");
+const bookshelf = document.getElementById("bookshelf"); //Click //Click (FURNITURE)
+const exploreBookshelf = document.getElementById("exploreBookshelf"); // (FURNITURE)
+const desk = document.getElementById("desk"); //Click (FURNITURE)
+const deskOpen = document.getElementById("deskOpen"); // (FURNITURE)
+const usedDesk = document.getElementById("usedDesk"); //(FURNITURE)
+const explorePiano = document.getElementById("pianoNo"); // (FURNITURE)
 const piano = document.getElementById("piano"); //Click
 
+//This hides all objects exept the starting doors
 lockedDoorText.style.opacity = 0;
 blueKey.style.opacity = 0;
 brownRoomBack.style.opacity = 0;
@@ -35,7 +38,7 @@ desk.style.opacity = 0;
 explorePiano.style.opacity = 0;
 piano.style.opacity = 0;
 
-//This takes the optionTexts id and says for the game to start at 1
+//This takes the optionTexts id and displays the text for id 1
 let currentId = 1;
 
 // We start the game here!
@@ -43,6 +46,7 @@ function startGame() {
   updateText(currentId);
 }
 
+//Fades in and out a text when doors are locked
 blueDoor.addEventListener("click", function () {
   lockedDoorText.style.visibility = "visible";
   lockedDoorText.style.opacity = 1;
@@ -64,6 +68,7 @@ greenDoor.addEventListener("click", function () {
   hideLockedText();
 });
 
+//Fades out the text
 function hideLockedText() {
   setTimeout(function () {
     lockedDoorText.style.opacity = 0;
@@ -74,6 +79,7 @@ function hideLockedText() {
   }, 1000);
 }
 
+//First room, just styles to hide whats not used
 brownDoor.addEventListener("click", function () {
   brownRoomBack.style.opacity = "1";
   brownRoomBack.style.transition = "opacity 3.5s";
@@ -101,13 +107,14 @@ brownDoor.addEventListener("click", function () {
   updateText(2);
 });
 
+//Back arrow
 function displayBackArrow() {
   setTimeout(function () {
     brownRoomBack.style.visibility = "visible";
   }, 800);
 }
 
-//This is my fade in animation
+//This is my fade in animation for the objects in the room
 function displayObjects() {
   setTimeout(function () {
     brownRoomBg.style.visibility = "visible";
@@ -124,6 +131,7 @@ function displayObjects() {
   }, 800);
 }
 
+//This hides and shows the doors when you go back from the brown room
 brownRoomBack.addEventListener("click", function () {
   setTimeout(function () {
     brownRoomBack.style.opacity = "0";
@@ -190,13 +198,6 @@ bookshelf.addEventListener("click", function () {
   updateText(3);
 });
 
-blueKey.addEventListener("click", function () {
-  blueKey.style.top = "20%";
-  blueKey.style.left = "30%";
-  blueKey.style.scale = 1;
-  blueKey.style.transition = "all 2s";
-});
-
 desk.addEventListener("click", function () {
   deskOpen.style.visibility = "visible";
   deskOpen.style.opacity = "1";
@@ -211,9 +212,33 @@ desk.addEventListener("click", function () {
   desk.style.opacity = 0;
   desk.style.transition = "opacity 1.5s";
   piano.style.visibility = "hidden";
-  piano.style.opacity = 1;
+  piano.style.opacity = 0;
   piano.style.transition = "opacity 1.5s";
   updateText(4);
+});
+
+blueKey.addEventListener("click", function () {
+  blueKey.style.top = "20%";
+  blueKey.style.left = "30%";
+  blueKey.style.scale = 1;
+  blueKey.style.transition = "all 2s";
+  brownRoomBack.style.visibility = "hidden";
+  brownRoomBackPD.style.visibility = "visible";
+});
+
+brownRoomBackPD.addEventListener("click", function () {
+  deskOpen.style.visibility = "hidden";
+  deskOpen.style.opacity = 0;
+  deskOpen.style.transition = "opacity 1.5s";
+  bookshelf.style.visibility = "visible";
+  bookshelf.style.opacity = 1;
+  bookshelf.style.transition = "opacity 1.5s";
+  usedDesk.style.visibility = "visible";
+  usedDesk.style.opacity = 1;
+  usedDesk.style.transition = "opacity 1.5s";
+  piano.style.visibility = "visible";
+  piano.style.opacity = 1;
+  piano.style.transition = "opacity 1.5s";
 });
 
 piano.addEventListener("click", function () {
