@@ -1,17 +1,17 @@
-const startRoomBg = document.getElementById("room");
-const brownRoomBg = document.getElementById("brownRoom");
-const backArrow = document.getElementById("backArrow"); //Click click click this
-const blueDoorBg = document.getElementById("blueDoorOpen");
-const blueDoor = document.getElementById("blueDoor"); //Click
-const redDoorBg = document.getElementById("redDoorOpen");
-const redDoor = document.getElementById("redDoor"); //Click
-const brownDoorBg = document.getElementById("brownDoorOpen");
-const brownDoor = document.getElementById("brownDoor"); //Click
-const greenDoorBg = document.getElementById("greenDoorOpen");
-const greenDoor = document.getElementById("greenDoor");
-const bookshelf = document.getElementById("bookshelf");
-const desk = document.getElementById("desk");
-const piano = document.getElementById("piano");
+const startRoomBg = document.getElementById("room"); //SCENE
+const brownRoomBg = document.getElementById("brownRoom"); //SCENE
+const backArrow = document.getElementById("backArrow"); // Click
+const blueDoorBg = document.getElementById("blueDoorOpen"); //BACKGROUND
+const blueDoor = document.getElementById("blueDoor"); // Click
+const redDoorBg = document.getElementById("redDoorOpen"); //BACKGROUND
+const redDoor = document.getElementById("redDoor"); // Click
+const brownDoorBg = document.getElementById("brownDoorOpen"); //BACKGROUND
+const brownDoor = document.getElementById("brownDoor"); // Click
+const greenDoorBg = document.getElementById("greenDoorOpen"); //BACKGROUND
+const greenDoor = document.getElementById("greenDoor"); // Click
+const bookshelf = document.getElementById("bookshelf"); //Click
+const desk = document.getElementById("desk"); //Click
+const piano = document.getElementById("piano"); //Click
 
 brownRoomBg.style.opacity = 0;
 bookshelf.style.opacity = 0;
@@ -33,24 +33,32 @@ brownDoor.addEventListener("click", function () {
   redDoor.style.display = "none";
   greenDoorBg.style.display = "none";
   greenDoor.style.display = "none";
+  brownDoorBg.style.opacity = 0;
+  brownDoor.style.opacity = 0;
+  startRoomBg.style.visibility = "hidden";
+  startRoomBg.style.opacity = 0;
+  startRoomBg.style.transition = "opacity .8s";
+  brownDoor.style.transition = "opacity .8s";
+  brownDoorBg.style.transition = "opacity .8s";
   displayObjects();
   updateText(2);
 });
 
+//This is my fade in animation
 function displayObjects() {
   setTimeout(function () {
-    startRoomBg.style.display = "none";
     brownRoomBg.style.visibility = "visible";
     brownRoomBg.style.opacity = 1;
     bookshelf.style.visibility = "visible";
     bookshelf.style.opacity = 1;
+    bookshelf.style.transition = "opacity 1.5s";
     desk.style.visibility = "visible";
     desk.style.opacity = 1;
+    desk.style.transition = "opacity 1.5s";
     piano.style.visibility = "visible";
     piano.style.opacity = 1;
-    brownDoorBg.style.visibility = "hidden";
-    brownDoor.style.opacity = 0;
-  }, 0);
+    piano.style.transition = "opacity 1.5s";
+  }, 800);
 }
 
 //This is takes boring static display text (gross)

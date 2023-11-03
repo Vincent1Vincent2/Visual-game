@@ -27,14 +27,12 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
   gap: 2rem;
   background-color: rgb(177, 177, 177);
   height: 50svh;
   width: 50vw;
+  visibility: visible;
 }
 
 #brownRoom {
@@ -42,10 +40,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
   gap: 2rem;
   background-color: rgb(177, 177, 177);
   height: 50svh;
@@ -61,14 +56,14 @@
   cursor: pointer;
   position: absolute;
   left: 35%;
-  top: 48.5%;
+  top: 46.5%;
   transition: all 1s;
 }
 
 #blueDoorOpen {
   position: absolute;
   left: 35%;
-  top: 48.5%;
+  top: 46.5%;
 }
 
 #blueDoor:hover {
@@ -80,14 +75,14 @@
   cursor: pointer;
   position: absolute;
   left: 45%;
-  top: 48.5%;
+  top: 46.5%;
   transition: all 1s;
 }
 
 #redDoorOpen {
   position: absolute;
   left: 45%;
-  top: 48.5%;
+  top: 46.5%;
 }
 
 #redDoor:hover {
@@ -99,14 +94,14 @@
   cursor: pointer;
   position: absolute;
   left: 55%;
-  top: 48.5%;
+  top: 46.5%;
   transition: all 1s;
 }
 
 #brownDoorOpen {
   position: absolute;
   left: 55%;
-  top: 48.5%;
+  top: 46.5%;
 }
 
 #brownDoor:hover {
@@ -118,14 +113,14 @@
   cursor: pointer;
   position: absolute;
   left: 65%;
-  top: 48.5%;
+  top: 46.5%;
   transition: all 1s;
 }
 
 #greenDoorOpen {
   position: absolute;
   left: 65%;
-  top: 48.5%;
+  top: 46.5%;
 }
 
 #greenDoor:hover {
