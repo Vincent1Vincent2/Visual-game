@@ -52,6 +52,17 @@
   visibility: hidden;
 }
 
+#brownRoomBack {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+#brownRoomBack:hover {
+  scale: 1.5;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -63,6 +74,7 @@
 
 #inventoryText {
   position: absolute;
+  color: white;
   top: 5%;
   left: 14%;
   font-size: 1.5rem;
@@ -70,6 +82,7 @@
 }
 
 #blueKey {
+  cursor: pointer;
   position: absolute;
   top: 72%;
   left: -290%;
@@ -79,20 +92,20 @@
 }
 
 #redKey {
+  cursor: pointer;
   visibility: hidden;
 }
 #greenKey {
+  cursor: pointer;
   visibility: hidden;
 }
 #lockPick {
+  cursor: pointer;
   visibility: hidden;
 }
 #noteSheet {
-  visibility: hidden;
-}
-
-#backArrow {
   cursor: pointer;
+  visibility: hidden;
 }
 
 #blueDoor {
@@ -109,7 +122,7 @@
   top: 46.5%;
 }
 
-#blueDoor:hover {
+#blueDoor.open {
   left: 34.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }

@@ -1,5 +1,6 @@
 const lockedDoorText = document.getElementById("lockedTitle");
 const inventory = document.getElementById("inventory");
+const brownRoomBack = document.getElementById("brownRoomBack");
 const blueKey = document.getElementById("blueKey");
 const redKey = document.getElementById("redKey");
 const greenKey = document.getElementById("greenKey");
@@ -25,6 +26,7 @@ const piano = document.getElementById("piano"); //Click
 
 lockedDoorText.style.opacity = 0;
 blueKey.style.opacity = 0;
+brownRoomBack.style.opacity = 0;
 brownRoomBg.style.opacity = 0;
 exploreBookshelf.style.opacity = 0;
 bookshelf.style.opacity = 0;
@@ -73,6 +75,8 @@ function hideLockedText() {
 }
 
 brownDoor.addEventListener("click", function () {
+  brownRoomBack.style.opacity = "1";
+  brownRoomBack.style.transition = "opacity 3.5s";
   blueDoorBg.style.display = "none";
   blueDoor.style.display = "none";
   redDoorBg.style.display = "none";
@@ -86,9 +90,16 @@ brownDoor.addEventListener("click", function () {
   startRoomBg.style.transition = "opacity .8s";
   brownDoor.style.transition = "opacity .8s";
   brownDoorBg.style.transition = "opacity .8s";
+  displayBackArrow();
   displayObjects();
   updateText(2);
 });
+
+function displayBackArrow() {
+  setTimeout(function () {
+    brownRoomBack.style.visibility = "visible";
+  }, 800);
+}
 
 //This is my fade in animation
 function displayObjects() {
@@ -127,6 +138,9 @@ desk.addEventListener("click", function () {
   deskOpen.style.visibility = "visible";
   deskOpen.style.opacity = "1";
   deskOpen.style.transition = "opacity 1.5s";
+  blueKey.style.visibility = "visible";
+  blueKey.style.opacity = "1";
+  blueKey.style.transition = "opacity 1.5s";
   bookshelf.style.visibility = "hidden";
   bookshelf.style.opacity = 0;
   bookshelf.style.transition = "opacity 1.5s";
@@ -140,10 +154,10 @@ desk.addEventListener("click", function () {
 });
 
 blueKey.addEventListener("click", function () {
-  blueKey.style.top = "30%";
-  blueKey.style.left = "25%";
+  blueKey.style.top = "20%";
+  blueKey.style.left = "30%";
   blueKey.style.scale = 1;
-  blueKey.style.transition = "all 3s";
+  blueKey.style.transition = "all 2s";
 });
 
 piano.addEventListener("click", function () {
