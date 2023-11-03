@@ -3,24 +3,26 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 .gameBox {
   height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+#displayText {
+  font-size: 2rem;
 }
 
 #lockedTitle {
   font-size: 6rem;
   position: absolute;
   top: 30%;
-  z-index: 1;
-  transition: all 1s;
   opacity: 0;
 }
 
-.room {
+#room {
   background-image: url(/startRoom.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -35,82 +37,140 @@
   width: 50vw;
 }
 
+#brownRoom {
+  background-image: url(/brownRoomBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: rgb(177, 177, 177);
+  height: 50svh;
+  width: 50vw;
+  visibility: hidden;
+}
+
 #backArrow {
   cursor: pointer;
 }
 
-.blueDoor {
+#blueDoor {
   cursor: pointer;
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 48.5%;
   transition: all 1s;
 }
 
-.blueDoorOpen {
+#blueDoorOpen {
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 48.5%;
 }
 
-.blueDoor:hover {
+#blueDoor:hover {
   left: 34.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }
 
-.redDoor {
+#redDoor {
   cursor: pointer;
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 48.5%;
   transition: all 1s;
 }
 
-.redDoorOpen {
+#redDoorOpen {
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 48.5%;
 }
 
-.redDoor:hover {
+#redDoor:hover {
   left: 44.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }
 
-.brownDoor {
+#brownDoor {
   cursor: pointer;
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 48.5%;
   transition: all 1s;
 }
 
-.brownDoorOpen {
+#brownDoorOpen {
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 48.5%;
 }
 
-.brownDoor:hover {
+#brownDoor:hover {
   left: 54.2%;
   transform: rotate3d(0, 30, 0, 45deg);
 }
 
-.greenDoor {
+#greenDoor {
   cursor: pointer;
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 48.5%;
   transition: all 1s;
 }
 
-.greenDoorOpen {
+#greenDoorOpen {
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 48.5%;
 }
 
-.greenDoor:hover {
+#greenDoor:hover {
   left: 64.2%;
   transform: rotate3d(0, 30, 0, 45deg);
+}
+
+#bookshelf {
+  cursor: pointer;
+  position: absolute;
+  left: 30%;
+  top: 57%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#bookshelf:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+
+#desk {
+  cursor: pointer;
+  position: absolute;
+  left: 45%;
+  top: 60%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#desk:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+
+#piano {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#piano:hover {
+  scale: 1.1;
+  transition: all 0.3s;
 }
