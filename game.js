@@ -1,6 +1,6 @@
 const lockedDoorText = document.getElementById("lockedTitle");
 const inventory = document.getElementById("inventory");
-const blueKey = document.getElementById("BlueKey");
+const blueKey = document.getElementById("blueKey");
 const redKey = document.getElementById("redKey");
 const greenKey = document.getElementById("greenKey");
 const lockPick = document.getElementById("lockPick");
@@ -24,6 +24,7 @@ const explorePiano = document.getElementById("pianoNo");
 const piano = document.getElementById("piano"); //Click
 
 lockedDoorText.style.opacity = 0;
+blueKey.style.opacity = 0;
 brownRoomBg.style.opacity = 0;
 exploreBookshelf.style.opacity = 0;
 bookshelf.style.opacity = 0;
@@ -89,6 +90,23 @@ brownDoor.addEventListener("click", function () {
   updateText(2);
 });
 
+//This is my fade in animation
+function displayObjects() {
+  setTimeout(function () {
+    brownRoomBg.style.visibility = "visible";
+    brownRoomBg.style.opacity = 1;
+    bookshelf.style.visibility = "visible";
+    bookshelf.style.opacity = 1;
+    bookshelf.style.transition = "opacity 1.5s";
+    desk.style.visibility = "visible";
+    desk.style.opacity = 1;
+    desk.style.transition = "opacity 1.5s";
+    piano.style.visibility = "visible";
+    piano.style.opacity = 1;
+    piano.style.transition = "opacity 1.5s";
+  }, 800);
+}
+
 bookshelf.addEventListener("click", function () {
   exploreBookshelf.style.visibility = "visible";
   exploreBookshelf.style.opacity = 1;
@@ -121,6 +139,13 @@ desk.addEventListener("click", function () {
   updateText(4);
 });
 
+blueKey.addEventListener("click", function () {
+  blueKey.style.top = "30%";
+  blueKey.style.left = "25%";
+  blueKey.style.scale = 1;
+  blueKey.style.transition = "all 3s";
+});
+
 piano.addEventListener("click", function () {
   explorePiano.style.visibility = "visible";
   explorePiano.style.opacity = "1";
@@ -136,23 +161,6 @@ piano.addEventListener("click", function () {
   piano.style.transition = "opacity 1.5s";
   updateText(5);
 });
-
-//This is my fade in animation
-function displayObjects() {
-  setTimeout(function () {
-    brownRoomBg.style.visibility = "visible";
-    brownRoomBg.style.opacity = 1;
-    bookshelf.style.visibility = "visible";
-    bookshelf.style.opacity = 1;
-    bookshelf.style.transition = "opacity 1.5s";
-    desk.style.visibility = "visible";
-    desk.style.opacity = 1;
-    desk.style.transition = "opacity 1.5s";
-    piano.style.visibility = "visible";
-    piano.style.opacity = 1;
-    piano.style.transition = "opacity 1.5s";
-  }, 800);
-}
 
 //This is takes boring static display text (gross)
 //Then update it with the current id! (COOL!)

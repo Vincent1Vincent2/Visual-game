@@ -69,6 +69,28 @@
   font-weight: bold;
 }
 
+#blueKey {
+  position: absolute;
+  top: 72%;
+  left: -290%;
+  z-index: 1;
+  scale: 0.6;
+  visibility: hidden;
+}
+
+#redKey {
+  visibility: hidden;
+}
+#greenKey {
+  visibility: hidden;
+}
+#lockPick {
+  visibility: hidden;
+}
+#noteSheet {
+  visibility: hidden;
+}
+
 #backArrow {
   cursor: pointer;
 }
