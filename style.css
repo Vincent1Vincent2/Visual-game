@@ -13,13 +13,17 @@
 
 #displayText {
   font-size: 2rem;
+  position: absolute;
+  top: 77%;
+  width: 500px;
+  text-align: center;
 }
 
 #lockedTitle {
   font-size: 6rem;
   position: absolute;
-  top: 30%;
-  opacity: 0;
+  top: 31%;
+  visibility: hidden;
 }
 
 #room {
@@ -46,6 +50,23 @@
   height: 50svh;
   width: 50vw;
   visibility: hidden;
+}
+
+#inventory {
+  position: absolute;
+  top: 25%;
+  left: 76%;
+  background-color: rgb(169, 169, 169);
+  height: 50svh;
+  width: 10vw;
+}
+
+#inventoryText {
+  position: absolute;
+  top: 5%;
+  left: 14%;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 #backArrow {
@@ -142,6 +163,13 @@
   transition: all 0.3s;
 }
 
+#exploreBookshelf {
+  position: absolute;
+  top: 50%;
+  left: 44%;
+  visibility: hidden;
+}
+
 #desk {
   cursor: pointer;
   position: absolute;
@@ -156,6 +184,13 @@
   transition: all 0.3s;
 }
 
+#deskOpen {
+  position: absolute;
+  top: 55%;
+  left: 44%;
+  visibility: hidden;
+}
+
 #piano {
   cursor: pointer;
   position: absolute;
@@ -168,4 +203,12 @@
 #piano:hover {
   scale: 1.1;
   transition: all 0.3s;
+}
+
+#pianoNo {
+  position: absolute;
+  scale: 1.2;
+  top: 49%;
+  left: 44%;
+  visibility: hidden;
 }
