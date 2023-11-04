@@ -20,6 +20,7 @@ const greenDoorBg = document.getElementById("greenDoorOpen"); //BACKGROUND
 const greenDoor = document.getElementById("greenDoor"); // Click
 const bookshelf = document.getElementById("bookshelf"); //Click //Click (FURNITURE)
 const exploreBookshelf = document.getElementById("exploreBookshelf"); // (FURNITURE)
+const usedBookshelf = document.getElementById("usedBookshelf"); // (FURNITURE)
 const desk = document.getElementById("desk"); //Click (FURNITURE)
 const deskOpen = document.getElementById("deskOpen"); // (FURNITURE)
 const usedDesk = document.getElementById("usedDesk"); //(FURNITURE)
@@ -37,6 +38,7 @@ deskOpen.style.opacity = 0;
 desk.style.opacity = 0;
 explorePiano.style.opacity = 0;
 piano.style.opacity = 0;
+lockPick.style.opacity = 0;
 
 //This takes the optionTexts id and displays the text for id 1
 let currentId = 1;
@@ -186,6 +188,9 @@ bookshelf.addEventListener("click", function () {
   exploreBookshelf.style.visibility = "visible";
   exploreBookshelf.style.opacity = 1;
   exploreBookshelf.style.transition = "opacity 1.5s";
+  lockPick.style.visibility = "visible";
+  lockPick.style.opacity = "1";
+  lockPick.style.transition = "opacity 1.5s";
   bookshelf.style.visibility = "hidden";
   bookshelf.style.opacity = 0;
   bookshelf.style.transition = "opacity 1.5s";
@@ -195,7 +200,34 @@ bookshelf.addEventListener("click", function () {
   piano.style.visibility = "hidden";
   piano.style.opacity = 0;
   piano.style.transition = "opacity 1.5s";
+  brownRoomBackPB.style.visibility = "hidden";
+  brownRoomBackP.style.visibility = "visible";
   updateText(3);
+});
+
+lockPick.addEventListener("click", function () {
+  lockPick.style.top = "30%";
+  lockPick.style.left = "30%";
+  lockPick.style.scale = 0.75;
+  lockPick.style.transition = "all 2s";
+  lockPick.style.transform = "rotate(0deg)";
+  brownRoomBackPB.style.visibility = "hidden";
+  brownRoomBackP.style.visibility = "visible";
+});
+
+brownRoomBackP.addEventListener("click", function () {
+  exploreBookshelf.style.visibility = "hidden";
+  exploreBookshelf.style.opacity = 0;
+  exploreBookshelf.style.transition = "opacity 1.5s";
+  usedBookshelf.style.visibility = "visible";
+  usedBookshelf.style.opacity = 1;
+  usedBookshelf.style.transition = "opacity 1.5s";
+  desk.style.visibility = "visible";
+  desk.style.opacity = 1;
+  desk.style.transition = "opacity 1.5s";
+  piano.style.visibility = "visible";
+  piano.style.opacity = 1;
+  piano.style.transition = "opacity 1.5s";
 });
 
 desk.addEventListener("click", function () {
@@ -223,10 +255,10 @@ blueKey.addEventListener("click", function () {
   blueKey.style.scale = 1;
   blueKey.style.transition = "all 2s";
   brownRoomBack.style.visibility = "hidden";
-  brownRoomBackPD.style.visibility = "visible";
+  brownRoomBackPB.style.visibility = "visible";
 });
 
-brownRoomBackPD.addEventListener("click", function () {
+brownRoomBackPB.addEventListener("click", function () {
   deskOpen.style.visibility = "hidden";
   deskOpen.style.opacity = 0;
   deskOpen.style.transition = "opacity 1.5s";

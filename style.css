@@ -64,13 +64,14 @@
   visibility: hidden;
 }
 
-#brownRoomBackPD {
+#brownRoomBackPB {
   cursor: pointer;
   position: absolute;
   top: 30%;
   left: 27%;
   visibility: hidden;
 }
+
 #brownRoomBackP {
   cursor: pointer;
   position: absolute;
@@ -83,7 +84,7 @@
   position: absolute;
   top: 25%;
   left: 76%;
-  background-color: rgb(169, 169, 169);
+  background-color: #b7b7b7;
   height: 50svh;
   width: 10vw;
 }
@@ -116,7 +117,15 @@
   visibility: hidden;
 }
 #lockPick {
+  position: absolute;
   cursor: pointer;
+  visibility: visible;
+  top: 58%;
+  left: -300%;
+  z-index: 1;
+  scale: 0.45;
+  transform: rotate(-10deg);
+  filter: contrast(2);
   visibility: hidden;
 }
 #noteSheet {
@@ -218,6 +227,14 @@
   position: absolute;
   top: 50%;
   left: 44%;
+  visibility: hidden;
+}
+
+#usedBookshelf {
+  position: absolute;
+  left: 30%;
+  top: 57%;
+  transition: all 0.3s;
   visibility: hidden;
 }
 
