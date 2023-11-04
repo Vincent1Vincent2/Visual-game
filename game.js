@@ -5,21 +5,33 @@ const brownRoomBackPB = document.getElementById("brownRoomBackPB"); //CLICK (BAC
 const brownRoomBackP = document.getElementById("brownRoomBackP"); //CLICK (BACK ARROW)
 const brownRoomBackBsF = document.getElementById("brownRoomBackBookshelfFirst"); //CLICK (BACK ARROW)
 const brownRoomBackDF = document.getElementById("brownRoomBackDeskFirst"); //CLICK (BACK ARROW)
+const brownRoomBackBDsUsed = document.getElementById(
+  "brownRoomBackBookshelfDeskUsed"
+); //CLICK (BACK ARROW)
 const blueKey = document.getElementById("blueKey"); //Click (ITEM)
+const useBlueKey = document.getElementById("useBlueKey"); //Click (ITEM)
 const redKey = document.getElementById("redKey"); //Click (ITEM)
+const useRedKey = document.getElementById("useRedKey"); //Click (ITEM)
 const greenKey = document.getElementById("greenKey"); //Click (ITEM)
+const useGreenKey = document.getElementById("useGreenKey"); //Click (ITEM)
 const lockPick = document.getElementById("lockPick"); //Click (ITEM
-const noteSheet = document.getElementById("noteSheet"); //Click (ITEM
+const useLockPick = document.getElementById("useLockPick"); //Click (ITEM)
+const noteSheet = document.getElementById("noteSheet"); //Click (ITEM)
+const useNoteSheet = document.getElementById("useNoteSheet"); //Click (ITEM)
 const startRoomBg = document.getElementById("room"); //SCENE
 const brownRoomBg = document.getElementById("brownRoom"); //SCENE
 const blueDoorBg = document.getElementById("blueDoorOpen"); //BACKGROUND
 const blueDoor = document.getElementById("blueDoor"); // Click
+const openBlueDoor = document.getElementById("openBlueDoor"); //Click / hover
 const redDoorBg = document.getElementById("redDoorOpen"); //BACKGROUND
 const redDoor = document.getElementById("redDoor"); // Click
+const openRedDoor = document.getElementById("openRedDoor"); //Click / hover
 const brownDoorBg = document.getElementById("brownDoorOpen"); //BACKGROUND
 const brownDoor = document.getElementById("brownDoor"); // Click
+const brownDoorOnlyPiano = document.getElementById("brownDoorOnlyPiano"); //Click / hover
 const greenDoorBg = document.getElementById("greenDoorOpen"); //BACKGROUND
 const greenDoor = document.getElementById("greenDoor"); // Click
+const openGreenDoor = document.getElementById("openGreenDoor"); //Click / hover
 const bookshelf = document.getElementById("bookshelf"); //Click //Click (FURNITURE)
 const bookshelfDeskFirst = document.getElementById("bookshelfDeskFirst"); //Click //Click (FURNITURE)
 const exploreBookshelf = document.getElementById("exploreBookshelf"); // (FURNITURE)
@@ -267,6 +279,60 @@ brownRoomBackBsF.addEventListener("click", function () {
   piano.style.visibility = "visible";
   piano.style.opacity = 1;
   piano.style.transition = "opacity 1.5s";
+  brownRoomBackBsF.style.visibility = "hidden";
+  brownRoomBackBDsUsed.style.visibility = "visible";
+});
+
+brownRoomBackBDsUsed.addEventListener("click", function () {
+  blueDoor.style.visibility = "visible";
+  blueDoorBg.style.visibility = "visible";
+  blueDoor.style.opacity = 1;
+  blueDoorBg.style.opacity = 1;
+  blueDoor.style.transition = "opacity .5s";
+  blueDoorBg.style.transition = "opacity .5s";
+  redDoorBg.style.visibility = "visible";
+  redDoor.style.visibility = "visible";
+  redDoor.style.opacity = 1;
+  redDoorBg.style.opacity = 1;
+  redDoor.style.transition = "opacity .9s";
+  redDoorBg.style.transition = "opacity .9s";
+  greenDoorBg.style.visibility = "visible";
+  greenDoor.style.visibility = "visible";
+  greenDoor.style.opacity = 1;
+  greenDoorBg.style.opacity = 1;
+  greenDoor.style.transition = "opacity 1.2s";
+  greenDoorBg.style.transition = "opacity 1.2s";
+  brownDoorBg.style.opacity = 1;
+  brownDoor.style.opacity = 1;
+  brownDoor.style.transition = "opacity 1.5s";
+  startRoomBg.style.visibility = "visible";
+  startRoomBg.style.opacity = 1;
+  startRoomBg.style.transition = "opacity 1.5s";
+  brownRoomBg.style.visibility = "hidden";
+  brownRoomBg.style.opacity = 0;
+  brownRoomBg.style.transition = "opacity .8s";
+  usedBookshelf.style.visibility = "hidden";
+  usedBookshelf.style.opacity = 0;
+  usedBookshelf.style.transition = "opacity .8s";
+  usedDesk.style.visibility = "hidden";
+  usedDesk.style.opacity = 0;
+  usedDesk.style.transition = "opacity .8s";
+  piano.style.visibility = "hidden";
+  piano.style.opacity = 0;
+  piano.style.transition = "opacity .8s";
+  blueKey.style.visibility = "hidden";
+  blueKey.style.opacity = "0";
+  useBlueKey.style.visibility = "visible";
+  useBlueKey.style.opacity = "1";
+});
+
+useBlueKey.addEventListener("click", function () {
+  useBlueKey.style.top = "58%";
+  useBlueKey.style.left = "-375%";
+  useBlueKey.style.transform =
+    "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
+  useBlueKey.style.scale = 0.4;
+  useBlueKey.style.transition = "all 3s";
 });
 
 desk.addEventListener("click", function () {

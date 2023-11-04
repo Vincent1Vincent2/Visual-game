@@ -96,6 +96,14 @@
   visibility: hidden;
 }
 
+#brownRoomBackBookshelfDeskUsed {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -121,6 +129,15 @@
   left: -290%;
   z-index: 1;
   scale: 0.6;
+  visibility: hidden;
+}
+
+#useBlueKey {
+  cursor: pointer;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  z-index: 1;
   visibility: hidden;
 }
 
