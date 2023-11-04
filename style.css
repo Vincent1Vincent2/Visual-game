@@ -80,6 +80,22 @@
   visibility: hidden;
 }
 
+#brownRoomBackBookshelfFirst {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
+#brownRoomBackDeskFirst {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -223,6 +239,15 @@
   transition: all 0.3s;
 }
 
+#bookshelfDeskFirst {
+  cursor: pointer;
+  position: absolute;
+  left: 30%;
+  top: 57%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
 #exploreBookshelf {
   position: absolute;
   top: 50%;
@@ -248,6 +273,19 @@
 }
 
 #desk:hover {
+  scale: 1.1;
+  transition: all 0.3s;
+}
+
+#deskBookshelfFirst {
+  cursor: pointer;
+  position: absolute;
+  left: 45%;
+  top: 60%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+#deskBookshelfFirst:hover {
   scale: 1.1;
   transition: all 0.3s;
 }
