@@ -115,11 +115,13 @@ brownDoor.addEventListener("click", function () {
   greenDoorBg.style.opacity = 0;
   brownDoorBg.style.opacity = 0;
   brownDoor.style.opacity = 0;
+  brownDoor.style.visibility = "hidden";
   startRoomBg.style.visibility = "hidden";
   startRoomBg.style.opacity = 0;
   startRoomBg.style.transition = "opacity .8s";
   brownDoor.style.transition = "opacity 1s";
   brownDoorBg.style.transition = "opacity 1s";
+  brownDoorBg.style.visibility = "hidden";
   displayBackArrow();
   displayObjects();
   updateText(2);
@@ -285,26 +287,29 @@ brownRoomBackBsF.addEventListener("click", function () {
 
 brownRoomBackBDsUsed.addEventListener("click", function () {
   blueDoor.style.visibility = "visible";
-  blueDoorBg.style.visibility = "visible";
   blueDoor.style.opacity = 1;
-  blueDoorBg.style.opacity = 1;
   blueDoor.style.transition = "opacity .5s";
+  blueDoorBg.style.visibility = "visible";
+  blueDoorBg.style.opacity = 1;
   blueDoorBg.style.transition = "opacity .5s";
-  redDoorBg.style.visibility = "visible";
   redDoor.style.visibility = "visible";
   redDoor.style.opacity = 1;
-  redDoorBg.style.opacity = 1;
   redDoor.style.transition = "opacity .9s";
+  redDoorBg.style.visibility = "visible";
+  redDoorBg.style.opacity = 1;
   redDoorBg.style.transition = "opacity .9s";
-  greenDoorBg.style.visibility = "visible";
   greenDoor.style.visibility = "visible";
   greenDoor.style.opacity = 1;
-  greenDoorBg.style.opacity = 1;
   greenDoor.style.transition = "opacity 1.2s";
+  greenDoorBg.style.visibility = "visible";
+  greenDoorBg.style.opacity = 1;
   greenDoorBg.style.transition = "opacity 1.2s";
+  brownDoorOnlyPiano.style.opacity = 1;
+  brownDoorOnlyPiano.style.transition = "all 1.5s";
+  brownDoorOnlyPiano.style.visibility = "visible";
   brownDoorBg.style.opacity = 1;
-  brownDoor.style.opacity = 1;
-  brownDoor.style.transition = "opacity 1.5s";
+  brownDoorBg.style.visibility = "visible";
+  brownDoorBg.style.transition = "opacity 1.2s";
   startRoomBg.style.visibility = "visible";
   startRoomBg.style.opacity = 1;
   startRoomBg.style.transition = "opacity 1.5s";
@@ -332,8 +337,29 @@ useBlueKey.addEventListener("click", function () {
   useBlueKey.style.transform =
     "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
   useBlueKey.style.scale = 0.4;
-  useBlueKey.style.transition = "all 3s";
+  useBlueKey.style.transition = "all 2s";
+  changeLockedStatus();
+  hideBlueKey();
 });
+
+function changeLockedStatus() {
+  setTimeout(function () {
+    blueDoor.style.visibility = "hidden";
+    blueDoor.style.opacity = 0;
+    blueDoor.style.transition = "opacity .5s";
+    openBlueDoor.style.visibility = "visible";
+    openBlueDoor.style.opacity = 1;
+    openBlueDoor.style.transition = "opacity .5s";
+  }, 3000);
+}
+
+function hideBlueKey() {
+  setTimeout(function () {
+    useBlueKey.style.opacity = 0;
+    useBlueKey.style.visibility = "hidden";
+    useBlueKey.style.transition = "opacity .8s";
+  }, 2000);
+}
 
 desk.addEventListener("click", function () {
   deskOpen.style.visibility = "visible";
@@ -411,8 +437,8 @@ brownRoomBackDF.addEventListener("click", function () {
   piano.style.visibility = "visible";
   piano.style.opacity = 1;
   piano.style.transition = "opacity 1.5s";
-  /* brownRoomBackPB.style.visibility = "hidden";
-  brownRoomBackDF.style.visibility = "visible"; */
+  brownRoomBackDF.style.visibility = "hidden";
+  brownRoomBackBDsUsed.style.visibility = "visible";
 });
 
 piano.addEventListener("click", function () {
