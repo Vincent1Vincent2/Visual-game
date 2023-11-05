@@ -136,6 +136,14 @@
   visibility: hidden;
 }
 
+#blueRoomBack {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -174,9 +182,13 @@
 
 #redKey {
   position: absolute;
+  top: 80%;
+  left: -310%;
+  scale: 0.6;
   cursor: pointer;
   visibility: hidden;
 }
+
 #useRedKey {
   position: absolute;
   cursor: pointer;
@@ -195,7 +207,7 @@
 #lockPick {
   position: absolute;
   cursor: pointer;
-  visibility: visible;
+  visibility: hidden;
   top: 58%;
   left: -300%;
   z-index: 1;
@@ -211,8 +223,12 @@
 }
 #noteSheet {
   position: absolute;
+  top: 69%;
+  left: -120%;
+  transform: rotate3d(1, 1, 1, 25deg);
+  scale: 0.6;
   cursor: pointer;
-  visibility: hidden;
+  visibility: visible;
 }
 #useNoteSheet {
   position: absolute;
@@ -468,8 +484,9 @@
 #pianoAfterDeskNo {
   cursor: pointer;
   position: absolute;
-  left: 60%;
-  top: 55%;
+  scale: 1.2;
+  top: 49%;
+  left: 44%;
   transition: all 0.3s;
   visibility: hidden;
 }
@@ -486,8 +503,9 @@
 #pianoAfterBothNo {
   cursor: pointer;
   position: absolute;
-  left: 60%;
-  top: 55%;
+  scale: 1.2;
+  top: 49%;
+  left: 44%;
   transition: all 0.3s;
   visibility: hidden;
 }
@@ -504,8 +522,9 @@
 #pianoAfterNoteSheetYes {
   cursor: pointer;
   position: absolute;
-  left: 60%;
-  top: 55%;
+  scale: 1.2;
+  top: 49%;
+  left: 44%;
   transition: all 0.3s;
   visibility: hidden;
 }
