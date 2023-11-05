@@ -104,6 +104,38 @@
   visibility: hidden;
 }
 
+#brownRoomBackPianoFirst {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
+#brownRoomBackPianoAfterBookshelf {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
+#brownRoomBackPianoAfterDesk {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
+#brownRoomBackPianoAfterBoth {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -404,5 +436,76 @@
   scale: 1.2;
   top: 49%;
   left: 44%;
+  visibility: hidden;
+}
+
+#pianoAfterBookshelf {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterBookshelfNo {
+  position: absolute;
+  scale: 1.2;
+  top: 49%;
+  left: 44%;
+  visibility: hidden;
+}
+
+#pianoAfterDesk {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterDeskNo {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterBoth {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterBothNo {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterNoteSheet {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#pianoAfterNoteSheetYes {
+  cursor: pointer;
+  position: absolute;
+  left: 60%;
+  top: 55%;
+  transition: all 0.3s;
   visibility: hidden;
 }
