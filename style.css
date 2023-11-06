@@ -136,7 +136,23 @@
   visibility: hidden;
 }
 
+#brownRoomBackAllUsed {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
 #blueRoomBack {
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  visibility: hidden;
+}
+
+#redRoomBack {
   cursor: pointer;
   position: absolute;
   top: 30%;
@@ -196,6 +212,9 @@
 }
 #greenKey {
   position: absolute;
+  top: 80%;
+  left: -350%;
+  scale: 0.6;
   cursor: pointer;
   visibility: hidden;
 }
@@ -207,7 +226,6 @@
 #lockPick {
   position: absolute;
   cursor: pointer;
-  visibility: hidden;
   top: 58%;
   left: -300%;
   z-index: 1;
@@ -219,6 +237,10 @@
 #useLockPick {
   position: absolute;
   cursor: pointer;
+  top: 30%;
+  left: 30%;
+  scale: 0.75;
+  z-index: 5;
   visibility: hidden;
 }
 #noteSheet {
@@ -228,12 +250,37 @@
   transform: rotate3d(1, 1, 1, 25deg);
   scale: 0.6;
   cursor: pointer;
-  visibility: visible;
+  visibility: hidden;
 }
 #useNoteSheet {
   position: absolute;
   cursor: pointer;
   visibility: hidden;
+}
+
+.lockPickBtn {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 4.85rem 2.7rem;
+  z-index: 2;
+  visibility: hidden;
+}
+#useLockPickBlue {
+  position: absolute;
+  left: 35%;
+  top: 46.5%;
+}
+
+#useLockPickRed {
+  position: absolute;
+  left: 45%;
+  top: 46.5%;
+}
+
+#useLockPickGreen {
+  position: absolute;
+  left: 65%;
+  top: 46.5%;
 }
 
 #blueDoor {
@@ -263,6 +310,13 @@
   transform: rotate3d(0, 30, 0, 45deg);
 }
 
+#usedBlueDoor {
+  position: absolute;
+  left: 35%;
+  top: 46.5%;
+  visibility: hidden;
+}
+
 #redDoor {
   cursor: pointer;
   position: absolute;
@@ -287,6 +341,13 @@
 #openRedDoor:hover {
   left: 44.2%;
   transform: rotate3d(0, 30, 0, 45deg);
+}
+
+#usedRedDoor {
+  position: absolute;
+  left: 45%;
+  top: 46.5%;
+  visibility: hidden;
 }
 
 #brownDoor {
@@ -323,6 +384,13 @@
   transition: all 1s;
 }
 
+#usedBrownDoor {
+  position: absolute;
+  left: 55%;
+  top: 46.5%;
+  visibility: hidden;
+}
+
 #greenDoor {
   cursor: pointer;
   position: absolute;
@@ -337,10 +405,6 @@
   top: 46.5%;
 }
 
-#greenDoor.open {
-  transform: rotate3d(0, 30, 0, 45deg);
-}
-
 #openGreenDoor {
   cursor: pointer;
   position: absolute;
@@ -352,6 +416,13 @@
 #openGreenDoor:hover {
   left: 64.2%;
   transform: rotate3d(0, 30, 0, 45deg);
+}
+
+#usedGreenDoor {
+  position: absolute;
+  left: 65%;
+  top: 46.5%;
+  visibility: hidden;
 }
 
 #bookshelf {
