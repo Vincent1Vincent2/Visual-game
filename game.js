@@ -77,6 +77,7 @@ const pianoAfterNoteSheetYes = document.getElementById(
   "pianoAfterNoteSheetYes"
 ); //Click //Click (FURNITURE)
 const playPiano = document.getElementById("playPiano");
+const pianoSong = document.getElementById("pianoSong");
 
 //This hides all objects exept the starting doors
 lockedDoorText.style.opacity = 0;
@@ -984,6 +985,10 @@ pianoAfterNoteSheetYes.addEventListener("click", function () {
   useNoteSheet.style.opacity = 1;
   useNoteSheet.style.transition = "opacity 1s";
   redRoomBack.style.visibility = "hidden";
+});
+
+playPiano.addEventListener("click", function () {
+  pianoSong.play();
   brownRoomBackAllUsed.style.visibility = "visible";
 });
 
@@ -1006,6 +1011,7 @@ brownRoomBack.addEventListener("click", function () {
   greenDoorBg.style.visibility = "visible";
   greenDoorBg.style.opacity = 1;
   greenDoorBg.style.transition = "opacity .2s";
+  pianoSong.stop();
 });
 
 useGreenKey.addEventListener("click", function () {
