@@ -26,6 +26,13 @@
   visibility: hidden;
 }
 
+#usedDoorTitle {
+  font-size: 5rem;
+  position: absolute;
+  top: 31%;
+  visibility: hidden;
+}
+
 #room {
   background-image: url(/imgs/backgrounds/startRoom.png);
   background-position: center;
@@ -207,8 +214,12 @@
 
 #useRedKey {
   position: absolute;
+  top: 20%;
+  left: 30%;
+  scale: 1;
   cursor: pointer;
   visibility: hidden;
+  z-index: 5;
 }
 #greenKey {
   position: absolute;
@@ -220,8 +231,11 @@
 }
 #useGreenKey {
   position: absolute;
+  top: 55%;
+  left: 30%;
   cursor: pointer;
   visibility: hidden;
+  z-index: 1;
 }
 #lockPick {
   position: absolute;
@@ -252,13 +266,16 @@
   cursor: pointer;
   visibility: hidden;
 }
+
 #useNoteSheet {
   position: absolute;
+  top: 65%;
+  left: 30%;
+  z-index: 5;
   cursor: pointer;
   visibility: hidden;
 }
-
-.lockPickBtn {
+*/ .lockPickBtn {
   cursor: pointer;
   background-color: transparent;
   padding: 4.85rem 2.7rem;
@@ -379,6 +396,21 @@
 }
 
 #brownDoorOnlyPiano:hover {
+  left: 54.2%;
+  transform: rotate3d(0, 30, 0, 45deg);
+  transition: all 1s;
+}
+
+#brownDoorUsePiano {
+  cursor: pointer;
+  position: absolute;
+  left: 55%;
+  top: 46.5%;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#brownDoorUsePiano:hover {
   left: 54.2%;
   transform: rotate3d(0, 30, 0, 45deg);
   transition: all 1s;
@@ -513,7 +545,7 @@
   visibility: hidden;
 }
 
-#piano:hover {
+.pianoScale:hover {
   scale: 1.1;
   transition: all 0.3s;
 }
@@ -593,8 +625,18 @@
 #pianoAfterNoteSheetYes {
   cursor: pointer;
   position: absolute;
+  left: 58.7%;
+  top: 52.6%;
+  scale: 0.8;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+#playPiano {
+  cursor: pointer;
+  position: absolute;
   scale: 1.2;
-  top: 49%;
+  top: 35%;
   left: 44%;
   transition: all 0.3s;
   visibility: hidden;

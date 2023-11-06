@@ -109,6 +109,7 @@
       ><button class="lockPickBtn" id="useLockPickGreen">G</button>
 
       <div id="lockedTitle">This door is locked</div>
+      <div id="usedDoorTitle">You've already been here</div>
       <img id="blueDoorOpen" src="/imgs/doors/blueOpen.png" alt="" />
       <img id="blueDoor" src="/imgs/doors/blueDoor.png" alt="" />
       <img id="openBlueDoor" src="/imgs/doors/openBlueDoor.png" alt="" />
@@ -120,6 +121,11 @@
       <img
         id="brownDoorOnlyPiano"
         src="/imgs/doors/brownDoorOnlyPiano.png"
+        alt=""
+      />
+      <img
+        id="brownDoorUsePiano"
+        src="/imgs/doors/brownDoorUsePiano.png"
         alt=""
       />
       <img id="greenDoorOpen" src="/imgs/doors/greenDoorOpen.png" alt="" />
@@ -153,23 +159,32 @@
         alt="bookshelf"
       />
       <img id="usedDesk" src="/imgs/furniture/usedDesk.png" alt="desk" />
-      <img id="piano" src="/imgs/furniture/piano.png" alt="piano" />
       <img
+        class="pianoScale"
+        id="piano"
+        src="/imgs/furniture/piano.png"
+        alt="piano"
+      />
+      <img
+        class="pianoScale"
         id="pianoAfterBookshelf"
         src="/imgs/furniture/pianoAfterBookshelf.png"
         alt=""
       />
       <img
+        class="pianoScale"
         id="pianoAfterDesk"
         src="/imgs/furniture/pianoAfterDesk.png"
         alt=""
       />
       <img
+        class="pianoScale"
         id="pianoAfterBoth"
         src="/imgs/furniture/pianoAfterBoth.png"
         alt=""
       />
       <img
+        class="pianoScale"
         id="pianoAfterNoteSheet"
         src="/imgs/furniture/pianoAfterNoteSheet.png"
         alt=""
@@ -195,6 +210,7 @@
         src="/imgs/furniture/pianoAfterNoteSheetYes.png"
         alt=""
       />
+      <img id="playPiano" src="/imgs/furniture/playPiano.png" alt="" />
     </main>
 
     <script src="game.js"></script>
