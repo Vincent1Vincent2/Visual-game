@@ -782,12 +782,6 @@ blueRoomBack.addEventListener("click", function () {
   usedBlueDoor.style.visibility = "visible";
   usedBlueDoor.style.opacity = 1;
   usedBlueDoor.style.transition = "opacity .9s";
-  /*   openBlueDoor.style.visibility = "hidden";
-  openBlueDoor.style.opacity = 0;
-  openBlueDoor.style.transition = "opacity .9s";
-  blueDoorBg.style.visibility = "hidden";
-  blueDoorBg.style.opacity = 0;
-  blueDoorBg.style.transition = "opacity .9s"; */
   greenDoor.style.visibility = "visible";
   greenDoor.style.opacity = 1;
   greenDoor.style.transition = "opacity 1.2s";
@@ -872,7 +866,7 @@ greenKey.addEventListener("click", function () {
   greenKey.style.left = "30%";
   greenKey.style.scale = 1;
   greenKey.style.transition = "all 2s";
-  brownRoomBackBDsUsed.style.visibility = "hidden";
+  blueRoomBack.style.visibility = "hidden";
   redRoomBack.style.visibility = "visible";
 });
 
@@ -882,7 +876,7 @@ noteSheet.addEventListener("click", function () {
   noteSheet.style.scale = 1;
   noteSheet.style.transform = "rotate3d(1, 1, 1, 2deg)";
   noteSheet.style.transition = "all 2s";
-  brownRoomBackBDsUsed.style.visibility = "hidden";
+  blueRoomBack.style.visibility = "hidden";
   redRoomBack.style.visibility = "visible";
 });
 
@@ -992,10 +986,13 @@ playPiano.addEventListener("click", function () {
   brownRoomBackAllUsed.style.visibility = "visible";
 });
 
-brownRoomBack.addEventListener("click", function () {
+brownRoomBackAllUsed.addEventListener("click", function () {
   playPiano.style.visibility = "hidden";
   playPiano.style.opacity = 0;
   playPiano.style.transition = "opacity .8s";
+  useNoteSheet.style.visibility = "hidden";
+  useNoteSheet.style.opacity = 0;
+  useNoteSheet.style.transition = "opacity .1";
   usedBlueDoor.style.visibility = "visible";
   usedBlueDoor.style.opacity = 1;
   usedBlueDoor.style.transition = "opacity .8s";
@@ -1011,7 +1008,13 @@ brownRoomBack.addEventListener("click", function () {
   greenDoorBg.style.visibility = "visible";
   greenDoorBg.style.opacity = 1;
   greenDoorBg.style.transition = "opacity .2s";
-  pianoSong.stop();
+  startRoomBg.style.visibility = "visible";
+  startRoomBg.style.opacity = 1;
+  startRoomBg.style.transition = "opacity .2s";
+  brownRoomBg.style.visibility = "hidden";
+  brownRoomBg.style.opacity = 0;
+  brownRoomBg.style.transition = "opacity .2s";
+  pianoSong.pause();
 });
 
 useGreenKey.addEventListener("click", function () {
