@@ -16,6 +16,9 @@ let pin = document.querySelector(".pin.current");
 let unlockTimer = null;
 let setUnlockTimer = false;
 
+countDownNumber.style.display = "none";
+pin.style.display = "none";
+lockContainer.style.display = "none";
 failText.style.display = "none";
 succesText.style.display = "none";
 backBtn.style.display = "none";
@@ -26,6 +29,9 @@ startBtn.addEventListener("click", function () {
   gameInfo.style.display = "none";
   gameDescription.style.display = "none";
   startBtn.style.display = "none";
+  countDownNumber.style.display = "block";
+  lockContainer.style.display = "block";
+  pin.style.display = "block";
 
   count = 15;
   const countDownTimer = setInterval(function () {
