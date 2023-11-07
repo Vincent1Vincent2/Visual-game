@@ -649,7 +649,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #aec6cf;
+  background-color: rgba(255, 255, 255, 0.226);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
 }
 
 .startGameContainer.blueRoom {
@@ -669,12 +672,13 @@
   align-items: center;
   justify-content: center;
   width: 800px;
-  height: 500px;
+  height: 550px;
   background-color: rgba(255, 255, 255, 0.226);
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.496);
+  z-index: 1;
 }
 
 #gameDescription {
@@ -685,16 +689,22 @@
 .gameBtn {
   padding: 1.2rem 5rem;
   font-size: 2rem;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.811);
   color: black;
-  border: solid 1.5px;
+  border: solid 1.5px rgba(0, 0, 0, 0.353);
+  border-radius: 5px;
+}
+
+.gameBtn:hover {
+  background-color: rgba(255, 255, 255, 0.556);
+  border: solid 1.5px rgba(0, 0, 0, 0.553);
 }
 
 .outcomeText {
   font-size: 8rem;
 }
 
-#countDown {
+#countDownNumber {
   position: absolute;
   left: 61%;
   top: 10%;
@@ -703,6 +713,7 @@
 }
 
 #lockContainer {
+  position: absolute;
   width: 450px;
   height: 450px;
 }
@@ -947,9 +958,24 @@
   }
 }
 
+#outerCircle.sucess,
+#outerCircle::after.sucess {
+  animation: sucess 0.5s;
+}
+
+@keyframes sucess {
+  50% {
+    border: 5px solid #77dd77;
+  }
+  0%,
+  100% {
+    border: 5px solid white;
+  }
+}
+
 #dot {
   position: absolute;
-  left: 60%;
+  left: 101.1%;
   top: 65%;
   width: 10px;
   height: 10px;
@@ -1042,10 +1068,30 @@ body {
 #pin.current {
   margin-top: 4rem;
   background-color: white;
+  animation: pinSucess 0.5s reverse;
 }
 
 #pin.done {
   background-color: #77dd77;
+  animation: pinDone 0.5s, pinSucess 0.5s;
+}
+
+@keyframes pinDone {
+  0% {
+    background-color: rgba(255, 255, 255);
+  }
+  25% {
+    background-color: rgb(178, 206, 178);
+  }
+  50% {
+    background-color: #a6d3a6;
+  }
+  75% {
+    background-color: #98d698;
+  }
+  100% {
+    background-color: #77dd77;
+  }
 }
 
 #pin.sucess {
