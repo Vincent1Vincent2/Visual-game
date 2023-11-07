@@ -21,3 +21,34 @@ let setUnlockTimer = false;
 failText.style.display = "none";
 succesText.style.display = "none";
 backBtn.style.display = "none";
+
+startBtn.addEventListener("clikc", function () {
+  startGameContainer.style.display = "none";
+  gameInfo.style.display = "none";
+  gameDescription.style.display = "none";
+});
+
+count = 10;
+const countDownTimer = setInterval(function () {
+  count--;
+  countDownNumber.innerText = count;
+  if (count === 0) {
+    clearInterval(countDownTimer);
+  }
+}, 1000);
+
+function mouseAngle(cx, cy, ex, ey) {
+  return ((Math.atan2(ey - cy, ex - cx) * 180) / Math.PI + 360) % 360;
+}
+
+function gameTimerCountDown() {
+  setTimeout(function () {
+    startGameContainer.style.display = "block";
+    gameInfo.style.display = "block";
+    failText.style.display = "block";
+    backBtn.style.display = "block";
+    lockContainer.style.display = "none";
+    lockPickArm.style.display = "none";
+    pin.style.display = "none";
+  }, 10000);
+}
