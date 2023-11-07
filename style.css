@@ -720,14 +720,13 @@
 
 #lockPickArm {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, 0%);
+  left: 49.5%;
+  top: 3%;
   width: 8px;
   height: 210px;
   border-radius: 50px;
   background-color: rgb(245, 245, 245);
-  transform-origin: top;
+  transform-origin: bottom;
 }
 
 #outerCircle {

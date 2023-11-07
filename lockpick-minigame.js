@@ -22,20 +22,33 @@ failText.style.display = "none";
 succesText.style.display = "none";
 backBtn.style.display = "none";
 
-startBtn.addEventListener("clikc", function () {
+startBtn.addEventListener("click", function () {
   startGameContainer.style.display = "none";
   gameInfo.style.display = "none";
   gameDescription.style.display = "none";
-});
+  startBtn.style.display = "none";
 
-count = 10;
-const countDownTimer = setInterval(function () {
-  count--;
-  countDownNumber.innerText = count;
-  if (count === 0) {
-    clearInterval(countDownTimer);
-  }
-}, 1000);
+  count = 10;
+  const countDownTimer = setInterval(function () {
+    count--;
+    countDownNumber.innerText = count;
+    if (count === 0) {
+      clearInterval(countDownTimer);
+    }
+  }, 1000);
+
+  document.addEventListener("mousemove", function (e) {
+    const threshold = 10;
+    const lockPosistion = lockContainer.getBoundingClientRect();
+    const deg = mouseAngle(
+      lockPosistion.left + lockPosistion.width / 2,
+      lockPosistion.top + lockPosistion.height / 2,
+      e.pageX,
+      e.pageY
+    );
+    lockPickArm.style.transform = `rotate(${deg + 90}deg)`;
+  });
+});
 
 function mouseAngle(cx, cy, ex, ey) {
   return ((Math.atan2(ey - cy, ex - cx) * 180) / Math.PI + 360) % 360;
