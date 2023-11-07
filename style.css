@@ -649,11 +649,17 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #b7b7b7;
+  background-color: #aec6cf;
 }
 
 .startGameContainer.blueRoom {
   background-color: #aec6cf;
+}
+.startGameContainer.redRoom {
+  background-color: #fe6161;
+}
+.startGameContainer.greenRoom {
+  background-color: #77dd77;
 }
 
 #gameInfo {
@@ -677,6 +683,75 @@
 }
 
 .gameBtn {
-  padding: 1rem 5rem;
-  font-size: 1rem;
+  padding: 1.2rem 5rem;
+  font-size: 2rem;
+  background-color: transparent;
+  color: black;
+  border: solid 1.5px;
+}
+
+.outcomeText {
+  font-size: 8rem;
+}
+
+#countDown {
+  position: absolute;
+  left: 61%;
+  top: 10%;
+  font-size: 10rem;
+}
+
+#lockContainer {
+  width: 450px;
+  height: 450px;
+  background-color: #566556;
+}
+
+#lockPickArm {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0%);
+  width: 5px;
+  height: 210px;
+  border-radius: 50px;
+  background-color: rgb(245, 245, 245);
+  transform-origin: top;
+}
+
+#outerCircle {
+  width: 100%;
+  height: 100%;
+  border: 5px solid white;
+  border-radius: 100%;
+}
+
+#innerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: solid 3px rgba(255, 255, 255, 0.382);
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.203);
+}
+
+body {
+  background-color: #aec6cf;
+}
+
+#pinContainer {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+  gap: 3.5rem;
+}
+
+#pin {
+  width: 20px;
+  height: 60px;
+  border-radius: 50px;
+  background-color: white;
 }
