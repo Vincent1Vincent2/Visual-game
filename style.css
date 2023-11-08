@@ -258,6 +258,7 @@
   z-index: 5;
   visibility: hidden;
 }
+
 #noteSheet {
   position: absolute;
   top: 69%;
@@ -276,10 +277,11 @@
   cursor: pointer;
   visibility: hidden;
 }
-*/ .lockPickBtn {
+.lockPickBtn {
   cursor: pointer;
   background-color: transparent;
-  padding: 4.85rem 2.7rem;
+  border: none;
+  padding: 5.3rem 2.95rem;
   z-index: 2;
   visibility: hidden;
 }
@@ -287,18 +289,48 @@
   position: absolute;
   left: 35%;
   top: 46.5%;
+  border: solid rgba(255, 255, 255, 0.6);
+}
+
+#useLockPickBlue:hover {
+  animation: highlight 0.5s step-end infinite;
 }
 
 #useLockPickRed {
   position: absolute;
   left: 45%;
   top: 46.5%;
+  border: solid rgba(255, 255, 255, 0.6);
+}
+#useLockPickRed:hover {
+  animation: highlight 0.5s step-end infinite;
 }
 
 #useLockPickGreen {
   position: absolute;
   left: 65%;
   top: 46.5%;
+  border: solid rgba(255, 255, 255, 0.6);
+}
+
+#useLockPickGreen:hover {
+  animation: highlight 0.5s step-end infinite;
+}
+
+@keyframes highlight {
+  0% {
+    border: solid 3px rgba(255, 255, 255, 0.1);
+  }
+  25% {
+    border: solid 3px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    border: solid 3px rgba(255, 255, 255, 0.6);
+  }
+
+  100% {
+    border: solid 3px white;
+  }
 }
 
 #blueDoor {
@@ -643,8 +675,10 @@
   visibility: hidden;
 }
 
-#startGameContainer {
+.startGameContainer {
   display: flex;
+  height: 100svh;
+  width: 100vw;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -654,13 +688,13 @@
   z-index: 1;
 }
 
-.startGameContainer.blueRoom {
+.blueRoom {
   background-color: #aec6cf;
 }
-.startGameContainer.redRoom {
+.redRoom {
   background-color: #fe6161;
 }
-.startGameContainer.greenRoom {
+.greenRoom {
   background-color: #77dd77;
 }
 
@@ -710,6 +744,15 @@
   top: 20%;
   font-size: 8rem;
   color: white;
+  display: none;
+}
+
+.lockBodyBg {
+  display: flex;
+  height: 100svh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
 }
 
 #lockContainer {
@@ -1016,10 +1059,6 @@
   border: solid 3px rgba(255, 255, 255, 0.382);
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.203);
-}
-
-body {
-  background-color: #aec6cf;
 }
 
 #pinContainer {
