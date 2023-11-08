@@ -5,6 +5,7 @@ const failText = document.getElementById("failText");
 const succesText = document.getElementById("succesText");
 const startBtn = document.getElementById("startBtn");
 const backBtn = document.getElementById("backBtn");
+const enterRoom = document.getElementById("enterRoom");
 const countDownNumber = document.getElementById("countDownNumber");
 const lockContainer = document.getElementById("lockContainer");
 const lockPickArm = document.getElementById("lockPickArm");
@@ -17,23 +18,20 @@ let unlockTimer = null;
 let setUnlockTimer = false;
 
 countDownNumber.style.display = "none";
-pin.style.display = "none";
 lockContainer.style.display = "none";
 failText.style.display = "none";
 succesText.style.display = "none";
 backBtn.style.display = "none";
+enterRoom.style.display = "none";
 dot.style.display = "none";
 
 startBtn.addEventListener("click", function () {
   startGameContainer.style.display = "none";
-  gameInfo.style.display = "none";
-  gameDescription.style.display = "none";
-  startBtn.style.display = "none";
   countDownNumber.style.display = "block";
   lockContainer.style.display = "block";
-  pin.style.display = "block";
+  gameTimerCountDown();
 
-  count = 15;
+  count = 13;
   const countDownTimer = setInterval(function () {
     count--;
     countDownNumber.innerText = count;
@@ -54,19 +52,18 @@ startBtn.addEventListener("click", function () {
     lockPickArm.style.transform = `rotate(${deg + 90}deg)`;
 
     const activeLockPosition = pin ? pin.dataset.deg : 0;
-
     if (
       deg <= Number(activeLockPosition) + threshold &&
       deg >= Number(activeLockPosition) - threshold
     ) {
       lockContainer.querySelector(".outerCircle").classList.add("shakeCricle");
-
       if (!setUnlockTimer) {
         unlockTimer = setTimeout(function () {
           if (pin) {
             pin.classList.add("done");
             pin.classList.remove("current");
             pin = pin.nextElementSibling;
+            console.log(pin);
 
             if (pin) {
               pin.classList.add("current");
@@ -93,6 +90,19 @@ startBtn.addEventListener("click", function () {
       clearTimeout(unlockTimer);
       setUnlockTimer = false;
     }
+    if (pin.classList.contains("win")) {
+      wonGame();
+      clearTimeout(gameTimer);
+    }
+
+    if (
+      deg <= Number(activeLockPosition) + threshold &&
+      deg >= Number(activeLockPosition) - threshold
+    ) {
+      lockPickArm.querySelector(".dot").style.display = "block";
+    } else {
+      lockPickArm.querySelector(".dot").style.display = "none";
+    }
   });
 });
 
@@ -100,14 +110,25 @@ function mouseAngle(cx, cy, ex, ey) {
   return ((Math.atan2(ey - cy, ex - cx) * 180) / Math.PI + 360) % 360;
 }
 
+function wonGame() {
+  startGameContainer.style.display = "block";
+  gameDescription.style.display = "none";
+  succesText.style.display = "block";
+  enterRoom.style.display = "block";
+  lockContainer.style.display = "none";
+  countDownNumber.style.display = "none";
+}
+
 function gameTimerCountDown() {
-  setTimeout(function () {
+  gameTimer = setTimeout(function () {
     startGameContainer.style.display = "block";
-    gameInfo.style.display = "block";
+    gameDescription.style.display = "none";
     failText.style.display = "block";
+    startBtn.style.display = "none";
     backBtn.style.display = "block";
     lockContainer.style.display = "none";
-    lockPickArm.style.display = "none";
-    pin.style.display = "none";
-  }, 15000);
+    countDownNumber.style.display = "none";
+    const loseSpan = document.getElementById("lose");
+    loseSpan.classList.remove("win");
+  }, 13000);
 }
