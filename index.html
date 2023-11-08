@@ -8,7 +8,7 @@
   </head>
   <body>
     <main class="gameBox">
-      <!--     <div id="displayText"></div>
+      <div id="displayText"></div>
       <div id="room"></div>
       <div id="brownRoom"></div>
       <img
@@ -104,9 +104,9 @@
         <img id="useNoteSheet" src="/imgs/items/useNoteSheet.png" alt="" />
       </div>
 
-      <button class="lockPickBtn" id="useLockPickBlue">B</button>
-      <button class="lockPickBtn" id="useLockPickRed">R</button
-      ><button class="lockPickBtn" id="useLockPickGreen">G</button>
+      <button class="lockPickBtn" id="useLockPickBlue"></button>
+      <button class="lockPickBtn" id="useLockPickRed"></button
+      ><button class="lockPickBtn" id="useLockPickGreen"></button>
 
       <div id="lockedTitle">This door is locked</div>
       <div id="usedDoorTitle">You've already been here</div>
@@ -211,23 +211,24 @@
         alt=""
       />
       <img id="playPiano" src="/imgs/furniture/playPiano.png" alt="" />
-      <audio id="pianoSong" src="/sounds/pianoMusicOne.mp3"></audio> -->
-      <div id="startGameContainer">
-        <div id="gameInfo">
-          <div id="gameDescription">
-            Unlock by finding three accses points, the circles will start
-            shaking. Hold each for three seconds until the ring turns green.
-            <br />Complete all within 13 seconds.
-          </div>
-          <div id="failText" class="outcomeText">Too slow</div>
-          <div id="succesText" class="outcomeText">Well done</div>
-          <button id="startBtn" class="gameBtn">Start Game</button>
-          <button id="backBtn" class="gameBtn">Go back</button>
-          <button id="enterRoom" class="gameBtn">Open door</button>
+      <audio id="pianoSong" src="/sounds/pianoMusicOne.mp3"></audio>
+    </main>
+    <div class="startGameContainer">
+      <div id="gameInfo">
+        <div id="gameDescription">
+          Unlock by finding three accses points, the circles will start shaking.
+          Hold each for three seconds until the ring turns green.
+          <br />Complete all within 13 seconds.
         </div>
+        <div id="failText" class="outcomeText">Too slow</div>
+        <div id="succesText" class="outcomeText">Well done</div>
+        <button id="startBtn" class="gameBtn">Start Game</button>
+        <button id="backBtn" class="gameBtn">Go back</button>
+        <button id="enterRoom" class="gameBtn">Open door</button>
       </div>
-
-      <div id="countDownNumber">15</div>
+    </div>
+    <div id="countDownNumber">13</div>
+    <div class="lockBodyBg">
       <div id="lockContainer">
         <div id="lockPickArm">
           <span class="dot"></span>
@@ -241,7 +242,7 @@
           <span id="lose" class="win"></span>
         </div>
       </div>
-    </main>
+    </div>
     <script src="game.js"></script>
     <script src="lockpick-minigame.js"></script>
   </body>

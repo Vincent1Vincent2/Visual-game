@@ -465,54 +465,43 @@ useLockPick.addEventListener("click", function () {
 });
 
 useLockPickBlue.addEventListener("click", function () {
-  useLockPick.style.top = "58%";
-  useLockPick.style.left = "-375%";
-  useLockPick.style.transform =
-    "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
-  useLockPick.style.scale = 0.4;
-  useLockPick.style.transition = "all 2s";
   useLockPickBlue.style.visibility = "hidden";
   useLockPickRed.style.visibility = "hidden";
   useLockPickGreen.style.visibility = "hidden";
-  changeBlueLockedStatus();
-  hideLockPick();
+  startGameContainer.style.display = "flex";
+  gameInfo.style.display = "flex";
+  startBtn.style.display = "block";
+  const gameBox = document.querySelector(".gameBox");
+  gameBox.style.display = "none";
+  document.body.classList.add("blueRoom");
+  lockBodyBg.classList.add("blueRoom");
 });
 
 useLockPickRed.addEventListener("click", function () {
-  useLockPick.style.top = "58%";
-  useLockPick.style.left = "-275%";
-  useLockPick.style.transform =
-    "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
-  useLockPick.style.scale = 0.4;
-  useLockPick.style.transition = "all 2s";
   useLockPickBlue.style.visibility = "hidden";
   useLockPickRed.style.visibility = "hidden";
   useLockPickGreen.style.visibility = "hidden";
-  changeRedLockedStatus();
-  hideLockPick();
+  startGameContainer.style.display = "flex";
+  gameInfo.style.display = "flex";
+  startBtn.style.display = "block";
+  const gameBox = document.querySelector(".gameBox");
+  gameBox.style.display = "none";
+  document.body.classList.add("redRoom");
+  lockBodyBg.classList.add("redRoom");
 });
 
 useLockPickGreen.addEventListener("click", function () {
-  useLockPick.style.top = "58%";
-  useLockPick.style.left = "-75%";
-  useLockPick.style.transform =
-    "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
-  useLockPick.style.scale = 0.4;
-  useLockPick.style.transition = "all 2s";
   useLockPickBlue.style.visibility = "hidden";
   useLockPickRed.style.visibility = "hidden";
   useLockPickGreen.style.visibility = "hidden";
-  changeGreenLockedStatus();
-  hideLockPick();
+  startGameContainer.style.display = "flex";
+  gameInfo.style.display = "flex";
+  startBtn.style.display = "block";
+  const gameBox = document.querySelector(".gameBox");
+  gameBox.style.display = "none";
+  document.body.classList.add("greenRoom");
+  lockBodyBg.classList.add("greenRoom");
 });
-
-function hideLockPick() {
-  setTimeout(function () {
-    useLockPick.style.visibility = "hidden";
-    useLockPick.style.opacity = 0;
-    useLockPick.style.transition = "opacity .8s";
-  }, 2000);
-}
 
 desk.addEventListener("click", function () {
   deskOpen.style.visibility = "visible";
@@ -954,10 +943,8 @@ useNoteSheet.addEventListener("click", function () {
   useNoteSheet.style.left = "-290%";
   useNoteSheet.style.transform = "rotate3d(0, 8, 3, 45deg)";
   useNoteSheet.style.scale = 0.7;
-  useNoteSheet.style.transition = "all 2s";
+  useNoteSheet.style.transition = "top 2s, left 2s";
 });
-
-function hideNoteSheet() {}
 
 pianoAfterNoteSheetYes.addEventListener("click", function () {
   playPiano.style.visibility = "visible";
@@ -977,7 +964,6 @@ pianoAfterNoteSheetYes.addEventListener("click", function () {
   noteSheet.style.transition = "opacity 1s";
   useNoteSheet.style.visibility = "visible";
   useNoteSheet.style.opacity = 1;
-  useNoteSheet.style.transition = "opacity 1s";
   redRoomBack.style.visibility = "hidden";
 });
 
@@ -1103,5 +1089,154 @@ const optionTexts = [
     ],
   },
 ];
+
+// LockPick minigame
+const startGameContainer = document.querySelector(".startGameContainer");
+const gameInfo = document.getElementById("gameInfo");
+const gameDescription = document.getElementById("gameDescription");
+const failText = document.getElementById("failText");
+const succesText = document.getElementById("succesText");
+const startBtn = document.getElementById("startBtn");
+const backBtn = document.getElementById("backBtn");
+const enterRoom = document.getElementById("enterRoom");
+const countDownNumber = document.getElementById("countDownNumber");
+const lockBodyBg = document.querySelector(".lockBodyBg");
+const lockContainer = document.getElementById("lockContainer");
+const lockPickArm = document.getElementById("lockPickArm");
+const outerCircle = document.querySelector(".outerCircle");
+const dot = document.querySelector(".dot");
+const innerCircle = document.getElementById("innerCircle");
+const pinContainer = document.getElementById("pinContainer");
+let pin = document.querySelector(".pin.current");
+let unlockTimer = null;
+let setUnlockTimer = false;
+
+//Hidden before player uses lockpick
+startGameContainer.style.display = "none";
+lockContainer.style.display = "none";
+startBtn.style.display = "none";
+lockBodyBg.style.display = "none";
+
+//Lock pick mechanism hidden before start screen
+countDownNumber.style.display = "none";
+lockContainer.style.display = "none";
+countDownNumber.style.display = "none";
+failText.style.display = "none";
+succesText.style.display = "none";
+backBtn.style.display = "none";
+enterRoom.style.display = "none";
+dot.style.display = "none";
+
+startBtn.addEventListener("click", function () {
+  startGameContainer.style.display = "none";
+  countDownNumber.style.display = "block";
+  lockBodyBg.style.display = "flex";
+  lockContainer.style.display = "block";
+  gameTimerCountDown();
+
+  count = 13;
+  const countDownTimer = setInterval(function () {
+    count--;
+    countDownNumber.innerText = count;
+    if (count === 0) {
+      clearInterval(countDownTimer);
+    }
+  }, 1000);
+
+  document.addEventListener("mousemove", function (e) {
+    const threshold = 5;
+    const lockPosistion = lockContainer.getBoundingClientRect();
+    const deg = mouseAngle(
+      lockPosistion.left + lockPosistion.width / 2,
+      lockPosistion.top + lockPosistion.height / 2,
+      e.pageX,
+      e.pageY
+    );
+    lockPickArm.style.transform = `rotate(${deg + 90}deg)`;
+
+    const activeLockPosition = pin ? pin.dataset.deg : 0;
+    if (
+      deg <= Number(activeLockPosition) + threshold &&
+      deg >= Number(activeLockPosition) - threshold
+    ) {
+      lockContainer.querySelector(".outerCircle").classList.add("shakeCricle");
+      if (!setUnlockTimer) {
+        unlockTimer = setTimeout(function () {
+          if (pin) {
+            pin.classList.add("done");
+            pin.classList.remove("current");
+            pin = pin.nextElementSibling;
+            console.log(pin);
+
+            if (pin) {
+              pin.classList.add("current");
+              lockContainer
+                .querySelector(".outerCircle")
+                .classList.add("sucess");
+              setTimeout(function () {
+                lockContainer
+                  .querySelector(".outerCircle")
+                  .classList.remove("sucess");
+              }, 2000);
+            }
+            lockContainer
+              .querySelector(".outerCircle")
+              .classList.remove("shakeCircle");
+          }
+        }, 3000);
+        setUnlockTimer = true;
+      }
+    } else {
+      lockContainer
+        .querySelector(".outerCircle")
+        .classList.remove("shakeCricle");
+      clearTimeout(unlockTimer);
+      setUnlockTimer = false;
+    }
+    if (pin.classList.contains("win")) {
+      wonGame();
+      clearTimeout(gameTimer);
+    }
+
+    if (
+      deg <= Number(activeLockPosition) + threshold &&
+      deg >= Number(activeLockPosition) - threshold
+    ) {
+      lockPickArm.querySelector(".dot").style.display = "block";
+    } else {
+      lockPickArm.querySelector(".dot").style.display = "none";
+    }
+  });
+});
+
+function mouseAngle(cx, cy, ex, ey) {
+  return ((Math.atan2(ey - cy, ex - cx) * 180) / Math.PI + 360) % 360;
+}
+
+function wonGame() {
+  startGameContainer.style.display = "flex";
+  gameDescription.style.display = "none";
+  succesText.style.display = "block";
+  startBtn.style.display = "none";
+  enterRoom.style.display = "block";
+  lockBodyBg.style.display = "none";
+  lockContainer.style.display = "none";
+  countDownNumber.style.display = "none";
+}
+
+function gameTimerCountDown() {
+  gameTimer = setTimeout(function () {
+    startGameContainer.style.display = "flex";
+    gameDescription.style.display = "none";
+    failText.style.display = "block";
+    startBtn.style.display = "none";
+    backBtn.style.display = "block";
+    lockBodyBg.style.display = "none";
+    lockContainer.style.display = "none";
+    countDownNumber.style.display = "none";
+    const loseSpan = document.getElementById("lose");
+    loseSpan.classList.remove("win");
+  }, 13000);
+}
 
 startGame();
