@@ -1192,3 +1192,55 @@
 .blackHover {
   background-color: rgb(48, 48, 48);
 }
+
+#blackFR {
+  position: absolute;
+  top: 42.2%;
+  left: 35.95%;
+}
+#blackGR {
+  position: absolute;
+  left: 38.5%;
+  top: 42.2%;
+}
+#blackAR {
+  position: absolute;
+  left: 42.75%;
+  top: 42.2%;
+}
+#blackCR {
+  position: absolute;
+  left: 45%;
+  top: 42.2%;
+}
+#blackDR {
+  position: absolute;
+  left: 47.25%;
+  top: 42.2%;
+}
+
+#blackFL {
+  position: absolute;
+  left: 51.7%;
+  top: 42.2%;
+}
+#blackGL {
+  position: absolute;
+  left: 53.95%;
+  top: 42.2%;
+}
+#blackAL {
+  position: absolute;
+  left: 56.2%;
+  top: 42.2%;
+}
+#blackCL {
+  position: absolute;
+  left: 60.55%;
+  top: 42.2%;
+}
+#blackDL {
+  position: absolute;
+  left: 62.8%;
+  top: 42.2%;
+}
