@@ -1239,4 +1239,61 @@ function gameTimerCountDown() {
   }, 13000);
 }
 
+//Piano minigame
+
+//WHITE KEYS
+const noteFR = document.getElementById("keyFR"); //KEYO1
+const noteGR = document.getElementById("keyGR"); //KEY03
+const noteAR = document.getElementById("keyAR"); //KEY05
+const noteBR = document.getElementById("keyBR"); //KEY07
+const noteCR = document.getElementById("keyCR"); //KEY08
+const noteDR = document.getElementById("keyDR"); //KEY10
+const noteER = document.getElementById("keyER"); //KEY12
+
+const noteFL = document.getElementById("keyFL"); //KEY13
+const noteGL = document.getElementById("keyGL"); //KEY15
+const noteAL = document.getElementById("keyAL"); //KEY17
+const noteBL = document.getElementById("keyBL"); //KEY19
+const noteCL = document.getElementById("keyCL"); //KEY20
+const noteDL = document.getElementById("keyDL"); //KEY22
+const noteEL = document.getElementById("keyEL"); //KEY24
+
+//BLACK KEYS
+const blackNoteFR = document.getElementById("blackFR"); //KEYO2
+const blackNoteGR = document.getElementById("blackGR"); //KEY04
+const blackNoteAR = document.getElementById("blackAR"); //KEY06
+const blackNoteCR = document.getElementById("blackCR"); //KEY09
+const blackNoteDR = document.getElementById("blackDR"); //KEY11
+const blackNoteFL = document.getElementById("blackFL"); //KEY14
+const blackNoteGL = document.getElementById("blackGL"); //KEY16
+const blackNoteAL = document.getElementById("blackAL"); //KEY18
+const blackNoteCL = document.getElementById("blackCL"); //KEY21
+const blackNoteDL = document.getElementById("blackDL"); //KEY23
+
+//NOTES
+const note01 = document.getElementById("note01");
+const note02 = document.getElementById("note02");
+const note03 = document.getElementById("note03");
+const note04 = document.getElementById("note04");
+const note05 = document.getElementById("note05");
+const note06 = document.getElementById("note06");
+const note07 = document.getElementById("note07");
+const note08 = document.getElementById("note08");
+const note09 = document.getElementById("note09");
+const note10 = document.getElementById("note10");
+const note11 = document.getElementById("note11");
+const note12 = document.getElementById("note12");
+const note13 = document.getElementById("note13");
+const note14 = document.getElementById("note14");
+const note15 = document.getElementById("note15");
+const note16 = document.getElementById("note16");
+const note17 = document.getElementById("note17");
+const note18 = document.getElementById("note18");
+const note19 = document.getElementById("note19");
+const note20 = document.getElementById("note20");
+const note21 = document.getElementById("note21");
+const note22 = document.getElementById("note22");
+const note23 = document.getElementById("note23");
+const note24 = document.getElementById("note24");
+
 startGame();
