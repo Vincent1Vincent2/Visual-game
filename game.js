@@ -1419,4 +1419,392 @@ function playNote24() {
   }
 }
 
+noteFR.addEventListener("click", function () {
+  playNote01();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "a") {
+    playNote01();
+    noteFR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "a") {
+    note01.pause();
+    note01.currentTime = 0;
+    noteFR.classList.remove("whiteHover");
+  }
+});
+noteGR.addEventListener("click", function () {
+  playNote03();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "s") {
+    playNote03();
+    noteGR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "s") {
+    note03.pause();
+    note03.currentTime = 0;
+    noteGR.classList.remove("whiteHover");
+  }
+});
+
+noteAR.addEventListener("click", function () {
+  playNote05();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "d") {
+    playNote05();
+    noteAR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "d") {
+    note05.pause();
+    note05.currentTime = 0;
+    noteAR.classList.remove("whiteHover");
+  }
+});
+
+noteBR.addEventListener("click", function () {
+  playNote07();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "f") {
+    playNote07();
+    noteBR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "f") {
+    note07.pause();
+    note07.currentTime = 0;
+    noteBR.classList.remove("whiteHover");
+  }
+});
+noteCR.addEventListener("click", function () {
+  playNote08();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "g") {
+    playNote08();
+    noteCR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "g") {
+    note08.pause();
+    note08.currentTime = 0;
+    noteCR.classList.remove("whiteHover");
+  }
+});
+noteDR.addEventListener("click", function () {
+  playNote10();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "h") {
+    playNote10();
+    noteDR.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "h") {
+    note10.pause();
+    note10.currentTime = 0;
+    noteDR.classList.remove("whiteHover");
+  }
+});
+noteER.addEventListener("click", function () {
+  playNote12();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "j") {
+    playNote12();
+    noteER.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "j") {
+    note12.pause();
+    note12.currentTime = 0;
+    noteER.classList.remove("whiteHover");
+  }
+});
+noteFL.addEventListener("click", function () {
+  playNote13();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "z") {
+    playNote13();
+    noteFL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "z") {
+    note13.pause();
+    note13.currentTime = 0;
+    noteFL.classList.remove("whiteHover");
+  }
+});
+noteGL.addEventListener("click", function () {
+  playNote15();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "x") {
+    playNote15();
+    noteGL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "x") {
+    note15.pause();
+    note15.currentTime = 0;
+    noteGL.classList.remove("whiteHover");
+  }
+});
+noteAL.addEventListener("click", function () {
+  playNote17();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "c") {
+    playNote17();
+    noteGL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "c") {
+    note17.pause();
+    note17.currentTime = 0;
+    noteGL.classList.remove("whiteHover");
+  }
+});
+noteBL.addEventListener("click", function () {
+  playNote19();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "v") {
+    playNote19();
+    noteBL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "v") {
+    note19.pause();
+    note19.currentTime = 0;
+    noteBL.classList.remove("whiteHover");
+  }
+});
+noteCL.addEventListener("click", function () {
+  playNote20();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "b") {
+    playNote20();
+    noteCL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "b") {
+    note20.pause();
+    note20.currentTime = 0;
+    noteCL.classList.remove("whiteHover");
+  }
+});
+noteDL.addEventListener("click", function () {
+  playNote22();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "n") {
+    playNote22();
+    noteDL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "n") {
+    note22.pause();
+    note22.currentTime = 0;
+    noteDL.classList.remove("whiteHover");
+  }
+});
+noteEL.addEventListener("click", function () {
+  playNote24();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "m") {
+    playNote24();
+    noteEL.classList.add("whiteHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "m") {
+    note24.pause();
+    note24.currentTime = 0;
+    noteEL.classList.remove("whiteHover");
+  }
+});
+
+blackNoteFR.addEventListener("click", function () {
+  playNote02();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "q") {
+    playNote02();
+    blackNoteFR.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "q") {
+    note02.pause();
+    note02.currentTime = 0;
+    blackNoteFR.classList.remove("blackHover");
+  }
+});
+blackNoteGR.addEventListener("click", function () {
+  playNote04();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "w") {
+    playNote04();
+    blackNoteGR.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "w") {
+    note04.pause();
+    note04.currentTime = 0;
+    blackNoteGR.classList.remove("blackHover");
+  }
+});
+blackNoteAR.addEventListener("click", function () {
+  playNote06();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "e") {
+    playNote06();
+    blackNoteAR.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "e") {
+    note06.pause();
+    note06.currentTime = 0;
+    blackNoteAR.classList.remove("blackHover");
+  }
+});
+blackNoteCR.addEventListener("click", function () {
+  playNote09();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "r") {
+    playNote09();
+    blackNoteCR.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "r") {
+    note09.pause();
+    note09.currentTime = 0;
+    blackNoteCR.classList.remove("blackHover");
+  }
+});
+blackNoteDR.addEventListener("click", function () {
+  playNote11();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "t") {
+    playNote11();
+    blackNoteDR.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "t") {
+    note11.pause();
+    note11.currentTime = 0;
+    blackNoteDR.classList.remove("blackHover");
+  }
+});
+blackNoteFL.addEventListener("click", function () {
+  playNote14();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "y") {
+    playNote14();
+    blackNoteFL.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "y") {
+    note14.pause();
+    note14.currentTime = 0;
+    blackNoteFL.classList.remove("blackHover");
+  }
+});
+blackNoteGL.addEventListener("click", function () {
+  playNote16();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "u") {
+    playNote16();
+    blackNoteGL.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "u") {
+    note16.pause();
+    note16.currentTime = 0;
+    blackNoteGL.classList.remove("blackHover");
+  }
+});
+blackNoteAL.addEventListener("click", function () {
+  playNote18();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "i") {
+    playNote18();
+    blackNoteAL.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "i") {
+    note18.pause();
+    note18.currentTime = 0;
+    blackNoteAL.classList.remove("blackHover");
+  }
+});
+blackNoteCL.addEventListener("click", function () {
+  playNote21();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "o") {
+    playNote21();
+    blackNoteCL.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "o") {
+    note21.pause();
+    note21.currentTime = 0;
+    blackNoteCL.classList.remove("blackHover");
+  }
+});
+blackNoteDL.addEventListener("click", function () {
+  playNote23();
+});
+window.addEventListener("keydown", function (event) {
+  if (event.key === "p") {
+    playNote23();
+    blackNoteDL.classList.add("blackHover");
+  }
+});
+window.addEventListener("keyup", function (event) {
+  if (event.key === "p") {
+    note23.pause();
+    note23.currentTime = 0;
+    blackNoteDL.classList.remove("blackHover");
+  }
+});
+
 startGame();
