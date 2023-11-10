@@ -1296,4 +1296,127 @@ const note22 = document.getElementById("note22");
 const note23 = document.getElementById("note23");
 const note24 = document.getElementById("note24");
 
+function playNote01() {
+  if (note01.paused) {
+    note01.play();
+  }
+}
+
+function playNote02() {
+  if (note02.paused) {
+    note02.play();
+  }
+}
+
+function playNote03() {
+  if (note03.paused) {
+    note03.play();
+  }
+}
+function playNote04() {
+  if (note04.paused) {
+    note04.play();
+  }
+}
+function playNote05() {
+  if (note05.paused) {
+    note05.play();
+  }
+}
+function playNote06() {
+  if (note06.paused) {
+    note06.play();
+  }
+}
+function playNote07() {
+  if (note07.paused) {
+    note07.play();
+  }
+}
+function playNote08() {
+  if (note08.paused) {
+    note08.play();
+  }
+}
+function playNote09() {
+  if (note09.paused) {
+    note09.play();
+  }
+}
+function playNote10() {
+  if (note10.paused) {
+    note10.play();
+  }
+}
+function playNote11() {
+  if (note11.paused) {
+    note11.play();
+  }
+}
+function playNote12() {
+  if (note12.paused) {
+    note12.play();
+  }
+}
+function playNote13() {
+  if (note13.paused) {
+    note13.play();
+  }
+}
+function playNote14() {
+  if (note14.paused) {
+    note14.play();
+  }
+}
+function playNote15() {
+  if (note15.paused) {
+    note15.play();
+  }
+}
+function playNote16() {
+  if (note16.paused) {
+    note16.play();
+  }
+}
+function playNote17() {
+  if (note17.paused) {
+    note17.play();
+  }
+}
+function playNote18() {
+  if (note18.paused) {
+    note18.play();
+  }
+}
+function playNote19() {
+  if (note19.paused) {
+    note19.play();
+  }
+}
+function playNote20() {
+  if (note20.paused) {
+    note20.play();
+  }
+}
+function playNote21() {
+  if (note21.paused) {
+    note21.play();
+  }
+}
+function playNote22() {
+  if (note22.paused) {
+    note22.play();
+  }
+}
+function playNote23() {
+  if (note23.paused) {
+    note23.play();
+  }
+}
+function playNote24() {
+  if (note24.paused) {
+    note24.play();
+  }
+}
+
 startGame();
