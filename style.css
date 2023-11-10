@@ -1144,7 +1144,7 @@
   }
 }
 
-.pianoBody {
+#pianoBody {
   height: 100svh;
   width: 100%;
   display: flex;

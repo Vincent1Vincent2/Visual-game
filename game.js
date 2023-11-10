@@ -1,3 +1,4 @@
+const gameBox = document.querySelector(".gameBox");
 const lockedDoorText = document.getElementById("lockedTitle"); //TEXT
 const usedDoorTitle = document.getElementById("usedDoorTitle"); //TEXT
 const inventory = document.getElementById("inventory"); //BACKGROUND
@@ -77,7 +78,13 @@ const pianoAfterNoteSheetYes = document.getElementById(
   "pianoAfterNoteSheetYes"
 ); //Click //Click (FURNITURE)
 const playPiano = document.getElementById("playPiano");
-const pianoSong = document.getElementById("pianoSong");
+//Buttons for the lockpick game when you loose or win
+const startGameContainer = document.querySelector(".startGameContainer");
+const gameInfo = document.getElementById("gameInfo");
+const lockBodyBg = document.querySelector(".lockBodyBg");
+const startBtn = document.getElementById("startBtn");
+const backBtn = document.getElementById("backBtn");
+const enterRoom = document.getElementById("enterRoom");
 
 //This hides all objects exept the starting doors
 lockedDoorText.style.opacity = 0;
@@ -201,7 +208,7 @@ function displayBackArrow() {
   }, 800);
 }
 
-//This is my fade in animation for the objects in the room
+//This is a fade in animation for the objects in the room
 function displayObjects() {
   setTimeout(function () {
     brownRoomBg.style.visibility = "visible";
@@ -315,6 +322,7 @@ brownRoomBackP.addEventListener("click", function () {
   deskBookshelfFirst.style.visibility = "visible";
   deskBookshelfFirst.style.opacity = 1;
   deskBookshelfFirst.style.transition = "opacity 1.5s";
+  updateText(4);
 });
 
 deskBookshelfFirst.addEventListener("click", function () {
@@ -335,6 +343,7 @@ deskBookshelfFirst.addEventListener("click", function () {
   pianoAfterBookshelf.style.transition = "opacity 1.5s";
   brownRoomBackP.style.visibility = "hidden";
   brownRoomBackBsF.style.visibility = "visible";
+  updateText(5);
 });
 
 brownRoomBackBsF.addEventListener("click", function () {
@@ -352,6 +361,7 @@ brownRoomBackBsF.addEventListener("click", function () {
   pianoAfterBoth.style.transition = "opacity 1.5s";
   brownRoomBackBsF.style.visibility = "hidden";
   brownRoomBackBDsUsed.style.visibility = "visible";
+  updateText(6);
 });
 
 brownRoomBackBDsUsed.addEventListener("click", function () {
@@ -402,6 +412,7 @@ brownRoomBackBDsUsed.addEventListener("click", function () {
   lockPick.style.opacity = 0;
   useLockPick.style.visibility = "visible";
   useLockPick.style.opacity = 1;
+  updateText(7);
 });
 
 brownDoorOnlyPiano.addEventListener("click", function () {});
@@ -471,10 +482,23 @@ useLockPickBlue.addEventListener("click", function () {
   startGameContainer.style.display = "flex";
   gameInfo.style.display = "flex";
   startBtn.style.display = "block";
-  const gameBox = document.querySelector(".gameBox");
   gameBox.style.display = "none";
   document.body.classList.add("blueRoom");
   lockBodyBg.classList.add("blueRoom");
+});
+
+backBtn.addEventListener("click", function () {
+  useLockPick.style.visibility = "hidden";
+  startGameContainer.style.display = "none";
+  gameInfo.style.display = "none";
+  startBtn.style.display = "none";
+  gameBox.style.display = "flex";
+  document.body.classList.remove("blueRoom");
+  lockBodyBg.classList.remove("blueRoom");
+  document.body.classList.remove("redRoom");
+  lockBodyBg.classList.remove("redRoom");
+  document.body.classList.remove("greenRoom");
+  lockBodyBg.classList.remove("greenRoom");
 });
 
 useLockPickRed.addEventListener("click", function () {
@@ -489,6 +513,13 @@ useLockPickRed.addEventListener("click", function () {
   document.body.classList.add("redRoom");
   lockBodyBg.classList.add("redRoom");
 });
+useLockPick.style.visibility = "hidden";
+startGameContainer.style.display = "none";
+gameInfo.style.display = "none";
+startBtn.style.display = "none";
+gameBox.style.display = "flex";
+document.body.classList.remove("redRoom");
+lockBodyBg.classList.remove("redRoom");
 
 useLockPickGreen.addEventListener("click", function () {
   useLockPickBlue.style.visibility = "hidden";
@@ -502,6 +533,13 @@ useLockPickGreen.addEventListener("click", function () {
   document.body.classList.add("greenRoom");
   lockBodyBg.classList.add("greenRoom");
 });
+useLockPick.style.visibility = "hidden";
+startGameContainer.style.display = "none";
+gameInfo.style.display = "none";
+startBtn.style.display = "none";
+gameBox.style.display = "flex";
+document.body.classList.remove("redRoom");
+lockBodyBg.classList.remove("redRoom");
 
 desk.addEventListener("click", function () {
   deskOpen.style.visibility = "visible";
@@ -519,7 +557,7 @@ desk.addEventListener("click", function () {
   piano.style.visibility = "hidden";
   piano.style.opacity = 0;
   piano.style.transition = "opacity 1.5s";
-  updateText(4);
+  updateText(5);
 });
 
 blueKey.addEventListener("click", function () {
@@ -544,6 +582,7 @@ brownRoomBackPB.addEventListener("click", function () {
   pianoAfterDesk.style.visibility = "visible";
   pianoAfterDesk.style.opacity = 1;
   pianoAfterDesk.style.transition = "opacity 1.5s";
+  updateText(8);
 });
 
 bookshelfDeskFirst.addEventListener("click", function () {
@@ -564,6 +603,7 @@ bookshelfDeskFirst.addEventListener("click", function () {
   pianoAfterDesk.style.transition = "opacity 1.5s";
   brownRoomBackPB.style.visibility = "hidden";
   brownRoomBackDF.style.visibility = "visible";
+  updateText(3);
 });
 
 brownRoomBackDF.addEventListener("click", function () {
@@ -581,6 +621,7 @@ brownRoomBackDF.addEventListener("click", function () {
   pianoAfterBoth.style.transition = "opacity 1.5s";
   brownRoomBackDF.style.visibility = "hidden";
   brownRoomBackBDsUsed.style.visibility = "visible";
+  updateText(6);
 });
 
 piano.addEventListener("click", function () {
@@ -598,7 +639,6 @@ piano.addEventListener("click", function () {
   piano.style.transition = "opacity 1.5s";
   brownRoomBack.style.visibility = "hidden";
   brownRoomBackPianoFirst.style.visibility = "visible";
-  updateText(5);
 });
 
 brownRoomBackPianoFirst.addEventListener("click", function () {
@@ -748,6 +788,7 @@ openBlueDoor.addEventListener("click", function () {
   redKey.style.visibility = "visible";
   redKey.style.opacity = 1;
   redKey.style.transition = "opacity 1s";
+  updateText(9);
 });
 
 redKey.addEventListener("click", function () {
@@ -789,6 +830,7 @@ blueRoomBack.addEventListener("click", function () {
   brownRoomBg.style.visibility = "hidden";
   brownRoomBg.style.opacity = 0;
   brownRoomBg.style.transition = "opacity .8s";
+  updateText(10);
 });
 
 useRedKey.addEventListener("click", function () {
@@ -968,11 +1010,14 @@ pianoAfterNoteSheetYes.addEventListener("click", function () {
 });
 
 playPiano.addEventListener("click", function () {
-  pianoSong.play();
   brownRoomBackAllUsed.style.visibility = "visible";
+  gameBox.style.display = "none";
+  pianoBody.style.display = "flex";
 });
 
 brownRoomBackAllUsed.addEventListener("click", function () {
+  gameBox.style.display = "flex";
+  pianoBody.style.display = "none";
   playPiano.style.visibility = "hidden";
   playPiano.style.opacity = 0;
   playPiano.style.transition = "opacity .8s";
@@ -1000,7 +1045,6 @@ brownRoomBackAllUsed.addEventListener("click", function () {
   brownRoomBg.style.visibility = "hidden";
   brownRoomBg.style.opacity = 0;
   brownRoomBg.style.transition = "opacity .2s";
-  pianoSong.pause();
 });
 
 useGreenKey.addEventListener("click", function () {
@@ -1064,43 +1108,50 @@ const optionTexts = [
   {
     id: 1,
     text: "You've been locked inside a house and need to find the right keys to make it out!",
-    options: [
-      {
-        nextText: 2,
-      },
-    ],
   },
   {
     id: 2,
     text: "What is this then...",
-    options: [
-      {
-        nextText: 3,
-      },
-    ],
   },
   {
     id: 3,
-    text: "This door is locked, you need the red key",
-    options: [
-      {
-        nextText: 1,
-      },
-    ],
+    text: "Look on the shelf, that's a lockpick!",
+  },
+  {
+    id: 4,
+    text: "Let's check out that desk",
+  },
+  {
+    id: 5,
+    text: "In the drawer, there's a blue key!",
+  },
+  {
+    id: 6,
+    text: "Only the piano left now, too bad i can't play...",
+  },
+  {
+    id: 7,
+    text: "Let's where i can use this key or mabye the lockpick",
+  },
+  {
+    id: 8,
+    text: "Let's check out that bookshelf",
+  },
+  {
+    id: 9,
+    text: "There on the floor! A red key.",
+  },
+  {
+    id: 10,
+    text: "Hmm a lockpick and a red key, i wonder witch i should use first",
   },
 ];
 
 // LockPick minigame
-const startGameContainer = document.querySelector(".startGameContainer");
-const gameInfo = document.getElementById("gameInfo");
 const gameDescription = document.getElementById("gameDescription");
 const failText = document.getElementById("failText");
 const succesText = document.getElementById("succesText");
-const startBtn = document.getElementById("startBtn");
-const backBtn = document.getElementById("backBtn");
-const enterRoom = document.getElementById("enterRoom");
 const countDownNumber = document.getElementById("countDownNumber");
-const lockBodyBg = document.querySelector(".lockBodyBg");
 const lockContainer = document.getElementById("lockContainer");
 const lockPickArm = document.getElementById("lockPickArm");
 const outerCircle = document.querySelector(".outerCircle");
@@ -1240,6 +1291,7 @@ function gameTimerCountDown() {
 }
 
 //Piano minigame
+const pianoBody = document.getElementById("pianoBody");
 
 //WHITE KEYS
 const noteFR = document.getElementById("keyFR"); //KEYO1
@@ -1295,6 +1347,8 @@ const note21 = document.getElementById("note21");
 const note22 = document.getElementById("note22");
 const note23 = document.getElementById("note23");
 const note24 = document.getElementById("note24");
+
+pianoBody.style.display = "none";
 
 function playNote01() {
   if (note01.paused) {
