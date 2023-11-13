@@ -866,8 +866,16 @@ blueRoomBack.addEventListener("click", function () {
   brownRoomBg.style.visibility = "hidden";
   brownRoomBg.style.opacity = 0;
   brownRoomBg.style.transition = "opacity .8s";
-  updateText(10);
+  isLockPickUsed();
 });
+
+function isLockPickUsed() {
+  if (useLockPick.style.visibility === "hidden") {
+    updateText(11);
+  } else {
+    updateText(10);
+  }
+}
 
 useRedKey.addEventListener("click", function () {
   useRedKey.style.top = "58%";
@@ -926,6 +934,7 @@ openRedDoor.addEventListener("click", function () {
   noteSheet.style.visibility = "visible";
   noteSheet.style.opacity = 1;
   noteSheet.style.transition = "opacity 1s";
+  updateText(12);
 });
 
 greenKey.addEventListener("click", function () {
@@ -978,6 +987,7 @@ redRoomBack.addEventListener("click", function () {
   useGreenKey.style.visibility = "visible";
   useGreenKey.style.opacity = 1;
   useGreenKey.style.transition = "opacity 1s";
+  updateText(13);
 });
 
 brownDoorUsePiano.addEventListener("click", function () {
@@ -1014,6 +1024,7 @@ brownDoorUsePiano.addEventListener("click", function () {
   pianoAfterNoteSheetYes.style.visibility = "visible";
   pianoAfterNoteSheetYes.style.opacity = 1;
   pianoAfterNoteSheetYes.style.transition = "opacity 1.8s";
+  updateText(14);
 });
 
 useNoteSheet.addEventListener("click", function () {
@@ -1043,6 +1054,7 @@ pianoAfterNoteSheetYes.addEventListener("click", function () {
   useNoteSheet.style.visibility = "visible";
   useNoteSheet.style.opacity = 1;
   redRoomBack.style.visibility = "hidden";
+  updateText(15);
 });
 
 playPiano.addEventListener("click", function () {
@@ -1081,6 +1093,7 @@ brownRoomBackAllUsed.addEventListener("click", function () {
   brownRoomBg.style.visibility = "hidden";
   brownRoomBg.style.opacity = 0;
   brownRoomBg.style.transition = "opacity .2s";
+  updateText(16);
 });
 
 useGreenKey.addEventListener("click", function () {
@@ -1139,7 +1152,6 @@ function updateText(id) {
   }
 }
 
-//WOW this be long :O
 const optionTexts = [
   {
     id: 1,
@@ -1180,6 +1192,30 @@ const optionTexts = [
   {
     id: 10,
     text: "Hmm a lockpick and a red key, i wonder witch i should use first",
+  },
+  {
+    id: 11,
+    text: "Hmm a red key, i wonder where i could use this...",
+  },
+  {
+    id: 12,
+    text: "On the floor a notesheet and a green key",
+  },
+  {
+    id: 13,
+    text: "I've could probebly use the note sheet on the piano",
+  },
+  {
+    id: 14,
+    text: "Let's check out that piano",
+  },
+  {
+    id: 15,
+    text: "Wonder what i can play",
+  },
+  {
+    id: 16,
+    text: "Wow... that was truly beutiful",
   },
 ];
 
@@ -1253,7 +1289,6 @@ startBtn.addEventListener("click", function () {
             pin.classList.add("done");
             pin.classList.remove("current");
             pin = pin.nextElementSibling;
-            console.log(pin);
 
             if (pin) {
               pin.classList.add("current");
