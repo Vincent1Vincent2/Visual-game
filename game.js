@@ -473,7 +473,43 @@ useLockPick.addEventListener("click", function () {
   useLockPickBlue.style.visibility = "visible";
   useLockPickRed.style.visibility = "visible";
   useLockPickGreen.style.visibility = "visible";
+  checkBlueUsedDoor();
+  checkRedUsedDoor();
+  checkGreenUsedDoor();
 });
+
+function checkBlueUsedDoor() {
+  if (
+    usedBlueDoor.style.visibility === "visible" &&
+    blueDoor.style.visibility === "hidden"
+  ) {
+    useLockPickBlue.style.visibility = "hidden";
+  } else {
+    useLockPickBlue.style.visibility = "visbile";
+  }
+}
+
+function checkRedUsedDoor() {
+  if (
+    usedRedDoor.style.visibility === "visible" &&
+    redDoor.style.visibility === "hidden"
+  ) {
+    useLockPickRed.style.visibility = "hidden";
+  } else {
+    useLockPickRed.style.visibility = "visbile";
+  }
+}
+
+function checkGreenUsedDoor() {
+  if (
+    usedGreenDoor.style.visibility === "visible" &&
+    greenDoor.style.visibility === "hidden"
+  ) {
+    useLockPickGreen.style.visibility = "hidden";
+  } else {
+    useLockPickGreen.style.visibility = "visbile";
+  }
+}
 
 useLockPickBlue.addEventListener("click", function () {
   useLockPickBlue.style.visibility = "hidden";
