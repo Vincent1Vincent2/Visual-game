@@ -1246,14 +1246,30 @@
   top: 42.2%;
 }
 
+.hide {
+  display: none;
+}
+
 #ipodSvg {
   width: 600px;
 }
 
-#menuBack {
+#menuBackBtn {
+  position: relative;
+  left: -14.65%;
+  top: -440px;
+  padding: 1rem 2.5rem;
+  border: solid;
+  background-color: transparent;
 }
 
-#playPause {
+#playPauseBtn {
+  position: relative;
+  left: -18%;
+  top: -145px;
+  padding: 1rem 1.85rem;
+  border: solid;
+  background-color: transparent;
 }
 
 .blueFill:hover {

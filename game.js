@@ -1936,8 +1936,8 @@ window.addEventListener("keyup", function (event) {
 });
 
 const ipodContainer = document.getElementById("ipodContainer");
-const menuBackBtn = document.getElementById("menuBack");
-const playPauseBtn = document.getElementById("playPause");
+const menuBackBtn = document.getElementById("menuBackBtn");
+const playPauseBtn = document.getElementById("playPauseBtn");
 const ipodScreen = document.getElementById("ipodScreen");
 const settingsScreen = document.getElementById("settingsScreen");
 const deviceInfoButton = document.getElementById("deviceInfoButton");
@@ -1947,5 +1947,28 @@ const settingsButton = document.getElementById("settingsButton");
 const photoButton = document.getElementById("photoButton");
 const videoButton = document.getElementById("videoButton");
 const menuButton = document.getElementById("menuButton");
+
+menuBackBtn.classList.add("hide");
+playPauseBtn.classList.add("hide");
+settingsScreen.classList.add("hide");
+
+menuBackBtn.addEventListener("click", function () {
+  showMenuBtns();
+  menuBackBtn.classList.add("hide");
+});
+
+settingsButton.addEventListener("click", function () {
+  hideMenuBtns();
+  settingsScreen.classList.remove("hide");
+  menuBackBtn.classList.remove("hide");
+});
+
+function hideMenuBtns() {
+  menuButtons.classList.add("hide");
+}
+
+function showMenuBtns() {
+  menuButtons.classList.remove("hide");
+}
 
 startGame();
