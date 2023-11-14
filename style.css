@@ -1248,12 +1248,13 @@
 
 #ipodContainer {
   position: absolute;
-  top: 60%;
-  left: 32.5%;
-  transform: rotate(-10deg);
-  scale: 0.8;
+  top: 62%;
+  left: 33.5%;
+  transform: rotate3d(10, -1, 10, 60deg);
+  scale: 0.45;
   cursor: pointer;
   visibility: visible;
+  z-index: 2;
 }
 
 .hide {
@@ -1284,4 +1285,19 @@
 
 .blueFill:hover {
   fill: aliceblue;
+}
+
+#bed {
+  position: absolute;
+  top: 56%;
+  left: 30%;
+  scale: 0.6;
+}
+
+#bedSideTable {
+  position: absolute;
+  top: 63%;
+  left: 31%;
+  scale: 0.6;
+  z-index: 1;
 }
