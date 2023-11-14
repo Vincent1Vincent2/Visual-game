@@ -1999,7 +1999,7 @@ function showMenuBtns() {
   menuButtons.classList.remove("hide");
 }
 
-let slideIndex = 1;
+let slideIndex = 0;
 
 function plusSlides(slideNumber) {
   showSlides((slideIndex += slideNumber));

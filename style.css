@@ -1252,7 +1252,6 @@
   left: 33.5%;
   transform: rotate3d(10, -1, 10, 60deg);
   scale: 0.45;
-  cursor: pointer;
   visibility: visible;
   z-index: 2;
 }
