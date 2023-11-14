@@ -1314,6 +1314,17 @@
   z-index: 2;
 }
 
+#aboutScreen {
+  position: absolute;
+  top: 20%;
+  left: 39.95%;
+  width: 501px;
+  height: 350px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 2;
+}
+
 .forward,
 .back {
   cursor: pointer;
@@ -1333,4 +1344,8 @@
 .forward:hover,
 .back:hover {
   color: rgba(99, 178, 247, 0.57);
+}
+
+.fillBlack {
+  fill: black;
 }

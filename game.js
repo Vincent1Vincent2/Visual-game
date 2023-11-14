@@ -1941,19 +1941,21 @@ const menuBackBtn = document.getElementById("menuBackBtn");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const ipodScreen = document.getElementById("ipodScreen");
 const settingsScreen = document.getElementById("settingsScreen");
-const deviceInfoButton = document.getElementById("deviceInfoButton");
-const darkModeButton = document.getElementById("darkModeButton");
+const darkModeButton = document.getElementById("deviceInfoButton");
+const deviceInfoButton = document.getElementById("darkModeButton");
 const menuButtons = document.getElementById("menuButtons");
 const settingsButton = document.getElementById("settingsButton");
 const photoButton = document.getElementById("photoButton");
 const videoButton = document.getElementById("videoButton");
 const menuButton = document.getElementById("menuButton");
 const photoContainer = document.getElementById("photoContainer");
+const aboutScreen = document.getElementById("aboutScreen");
 
 menuBackBtn.classList.add("hide");
 playPauseBtn.classList.add("hide");
 settingsScreen.classList.add("hide");
 photoContainer.classList.add("hide");
+aboutScreen.classList.add("hide");
 
 ipodContainer.addEventListener("click", function () {
   ipodContainer.style.top = "20%";
@@ -1967,6 +1969,7 @@ menuBackBtn.addEventListener("click", function () {
   showMenuBtns();
   photoContainer.classList.add("hide");
   menuBackBtn.classList.add("hide");
+  aboutScreen.classList.add("hide");
 });
 
 settingsButton.addEventListener("click", function () {
@@ -1979,6 +1982,13 @@ photoButton.addEventListener("click", function () {
   hideMenuBtns();
   photoContainer.classList.remove("hide");
   menuBackBtn.classList.remove("hide");
+});
+
+darkModeButton.addEventListener("click", function () {});
+
+deviceInfoButton.addEventListener("click", function () {
+  aboutScreen.classList.remove("hide");
+  settingsScreen.classList.add("hide");
 });
 
 function hideMenuBtns() {
