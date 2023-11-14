@@ -1936,6 +1936,7 @@ window.addEventListener("keyup", function (event) {
 });
 
 const ipodContainer = document.getElementById("ipodContainer");
+const ipodSvg = document.getElementById("ipodSvg");
 const menuBackBtn = document.getElementById("menuBackBtn");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const ipodScreen = document.getElementById("ipodScreen");
@@ -1951,6 +1952,14 @@ const menuButton = document.getElementById("menuButton");
 menuBackBtn.classList.add("hide");
 playPauseBtn.classList.add("hide");
 settingsScreen.classList.add("hide");
+
+ipodContainer.addEventListener("click", function () {
+  ipodContainer.style.top = "20%";
+  ipodContainer.style.left = "40%";
+  ipodContainer.style.transform = "rotate(0deg)";
+  ipodContainer.style.scale = "1.2";
+  ipodSvg.style.width = "500px";
+});
 
 menuBackBtn.addEventListener("click", function () {
   showMenuBtns();

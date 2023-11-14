@@ -288,7 +288,7 @@
 #useLockPickBlue {
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 50%;
   border: solid rgba(255, 255, 255, 0.6);
 }
 
@@ -299,7 +299,7 @@
 #useLockPickRed {
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 50%;
   border: solid rgba(255, 255, 255, 0.6);
 }
 #useLockPickRed:hover {
@@ -309,7 +309,7 @@
 #useLockPickGreen {
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 50%;
   border: solid rgba(255, 255, 255, 0.6);
 }
 
@@ -337,21 +337,21 @@
   cursor: pointer;
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
 }
 
 #blueDoorOpen {
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 50%;
 }
 
 #openBlueDoor {
   cursor: pointer;
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
   visibility: hidden;
 }
@@ -363,7 +363,7 @@
 #usedBlueDoor {
   position: absolute;
   left: 35%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
 }
 
@@ -371,20 +371,20 @@
   cursor: pointer;
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
 }
 
 #redDoorOpen {
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 50%;
 }
 #openRedDoor {
   cursor: pointer;
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
   visibility: hidden;
 }
@@ -396,7 +396,7 @@
 #usedRedDoor {
   position: absolute;
   left: 45%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
 }
 
@@ -404,14 +404,14 @@
   cursor: pointer;
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
 }
 
 #brownDoorOpen {
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 50%;
 }
 
 #brownDoor:hover {
@@ -423,7 +423,7 @@
 #brownDoorOnlyPiano {
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
   transition: all 1s;
 }
@@ -438,7 +438,7 @@
   cursor: pointer;
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
   transition: all 1s;
 }
@@ -452,7 +452,7 @@
 #usedBrownDoor {
   position: absolute;
   left: 55%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
 }
 
@@ -460,21 +460,21 @@
   cursor: pointer;
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
 }
 
 #greenDoorOpen {
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 50%;
 }
 
 #openGreenDoor {
   cursor: pointer;
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 50%;
   transition: all 1s;
   visibility: hidden;
 }
@@ -486,7 +486,7 @@
 #usedGreenDoor {
   position: absolute;
   left: 65%;
-  top: 46.5%;
+  top: 50%;
   visibility: hidden;
 }
 
@@ -1246,12 +1246,22 @@
   top: 42.2%;
 }
 
+#ipodContainer {
+  position: absolute;
+  top: 60%;
+  left: 32.5%;
+  transform: rotate(-10deg);
+  scale: 0.8;
+  cursor: pointer;
+  visibility: visible;
+}
+
 .hide {
   display: none;
 }
 
 #ipodSvg {
-  width: 600px;
+  width: 50px;
 }
 
 #menuBackBtn {
