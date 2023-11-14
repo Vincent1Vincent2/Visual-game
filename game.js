@@ -1948,10 +1948,12 @@ const settingsButton = document.getElementById("settingsButton");
 const photoButton = document.getElementById("photoButton");
 const videoButton = document.getElementById("videoButton");
 const menuButton = document.getElementById("menuButton");
+const photoContainer = document.getElementById("photoContainer");
 
 menuBackBtn.classList.add("hide");
 playPauseBtn.classList.add("hide");
 settingsScreen.classList.add("hide");
+photoContainer.classList.add("hide");
 
 ipodContainer.addEventListener("click", function () {
   ipodContainer.style.top = "20%";
@@ -1963,6 +1965,7 @@ ipodContainer.addEventListener("click", function () {
 
 menuBackBtn.addEventListener("click", function () {
   showMenuBtns();
+  photoContainer.classList.add("hide");
   menuBackBtn.classList.add("hide");
 });
 
@@ -1972,12 +1975,43 @@ settingsButton.addEventListener("click", function () {
   menuBackBtn.classList.remove("hide");
 });
 
+photoButton.addEventListener("click", function () {
+  hideMenuBtns();
+  photoContainer.classList.remove("hide");
+  menuBackBtn.classList.remove("hide");
+});
+
 function hideMenuBtns() {
   menuButtons.classList.add("hide");
 }
 
 function showMenuBtns() {
   menuButtons.classList.remove("hide");
+}
+
+let slideIndex = 1;
+
+function plusSlides(slideNumber) {
+  showSlides((slideIndex += slideNumber));
+}
+
+function currentSlide(slideNumber) {
+  showSlides((slideIndex = slideNumber));
+}
+
+function showSlides(slideNumber) {
+  let slides = document.getElementsByClassName("ipodPhoto");
+  if (slideNumber > slides.length) {
+    slideIndex = 1;
+  }
+  if (slideNumber < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
 }
 
 startGame();

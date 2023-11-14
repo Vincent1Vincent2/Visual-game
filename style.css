@@ -1266,12 +1266,13 @@
 }
 
 #menuBackBtn {
-  position: relative;
-  left: -14.65%;
-  top: -440px;
+  position: absolute;
+  left: 41.35%;
+  top: 53.5%;
   padding: 1rem 2.5rem;
   border: solid;
   background-color: transparent;
+  cursor: pointer;
 }
 
 #playPauseBtn {
@@ -1311,4 +1312,25 @@
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   z-index: 2;
+}
+
+.forward,
+.back {
+  cursor: pointer;
+  position: absolute;
+  top: 32%;
+  left: 41%;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 3rem;
+  z-index: 2;
+}
+
+.forward {
+  left: 64.5%;
+}
+
+.forward:hover,
+.back:hover {
+  color: rgba(99, 178, 247, 0.57);
 }
