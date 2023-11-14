@@ -78,7 +78,7 @@ const pianoAfterNoteSheetYes = document.getElementById(
   "pianoAfterNoteSheetYes"
 ); //Click //Click (FURNITURE)
 const playPiano = document.getElementById("playPiano");
-//Buttons for the lockpick game when you loose or win
+//Buttons for the lock pick game when you loose or win
 const startGameContainer = document.querySelector(".startGameContainer");
 const gameInfo = document.getElementById("gameInfo");
 const lockBodyBg = document.querySelector(".lockBodyBg");
@@ -86,7 +86,7 @@ const startBtn = document.getElementById("startBtn");
 const backBtn = document.getElementById("backBtn");
 const enterRoom = document.getElementById("enterRoom");
 
-//This hides all objects exept the starting doors
+//This hides all objects except the starting doors
 lockedDoorText.style.opacity = 0;
 blueKey.style.opacity = 0;
 brownRoomBack.style.opacity = 0;
@@ -485,7 +485,7 @@ function checkBlueUsedDoor() {
   ) {
     useLockPickBlue.style.visibility = "hidden";
   } else {
-    useLockPickBlue.style.visibility = "visbile";
+    useLockPickBlue.style.visibility = "visible";
   }
 }
 
@@ -496,7 +496,7 @@ function checkRedUsedDoor() {
   ) {
     useLockPickRed.style.visibility = "hidden";
   } else {
-    useLockPickRed.style.visibility = "visbile";
+    useLockPickRed.style.visibility = "visible";
   }
 }
 
@@ -507,7 +507,7 @@ function checkGreenUsedDoor() {
   ) {
     useLockPickGreen.style.visibility = "hidden";
   } else {
-    useLockPickGreen.style.visibility = "visbile";
+    useLockPickGreen.style.visibility = "visible";
   }
 }
 
@@ -1163,7 +1163,7 @@ const optionTexts = [
   },
   {
     id: 3,
-    text: "Look on the shelf, that's a lockpick!",
+    text: "Look on the shelf, that's a lock pick!",
   },
   {
     id: 4,
@@ -1179,7 +1179,7 @@ const optionTexts = [
   },
   {
     id: 7,
-    text: "Let's where i can use this key or mabye the lockpick",
+    text: "Let's where i can use this key or maybe the lock pick",
   },
   {
     id: 8,
@@ -1191,7 +1191,7 @@ const optionTexts = [
   },
   {
     id: 10,
-    text: "Hmm a lockpick and a red key, i wonder witch i should use first",
+    text: "Hmm a lock pick and a red key, i wonder witch i should use first",
   },
   {
     id: 11,
@@ -1199,11 +1199,11 @@ const optionTexts = [
   },
   {
     id: 12,
-    text: "On the floor a notesheet and a green key",
+    text: "On the floor a note sheet and a green key",
   },
   {
     id: 13,
-    text: "I've could probebly use the note sheet on the piano",
+    text: "I've could probably use the note sheet on the piano",
   },
   {
     id: 14,
@@ -1215,14 +1215,18 @@ const optionTexts = [
   },
   {
     id: 16,
-    text: "Wow... that was truly beutiful",
+    text: "Wow... that was truly beautiful",
+  },
+  {
+    id: 17,
+    text: "Now let's get out of here!",
   },
 ];
 
-// LockPick minigame
+// LockPick mini game
 const gameDescription = document.getElementById("gameDescription");
 const failText = document.getElementById("failText");
-const succesText = document.getElementById("succesText");
+const successText = document.getElementById("successText");
 const countDownNumber = document.getElementById("countDownNumber");
 const lockContainer = document.getElementById("lockContainer");
 const lockPickArm = document.getElementById("lockPickArm");
@@ -1234,7 +1238,7 @@ let pin = document.querySelector(".pin.current");
 let unlockTimer = null;
 let setUnlockTimer = false;
 
-//Hidden before player uses lockpick
+//Hidden before player uses lock pick
 startGameContainer.style.display = "none";
 lockContainer.style.display = "none";
 startBtn.style.display = "none";
@@ -1245,7 +1249,6 @@ countDownNumber.style.display = "none";
 lockContainer.style.display = "none";
 countDownNumber.style.display = "none";
 failText.style.display = "none";
-succesText.style.display = "none";
 backBtn.style.display = "none";
 enterRoom.style.display = "none";
 dot.style.display = "none";
@@ -1268,10 +1271,10 @@ startBtn.addEventListener("click", function () {
 
   document.addEventListener("mousemove", function (e) {
     const threshold = 5;
-    const lockPosistion = lockContainer.getBoundingClientRect();
+    const lockPosition = lockContainer.getBoundingClientRect();
     const deg = mouseAngle(
-      lockPosistion.left + lockPosistion.width / 2,
-      lockPosistion.top + lockPosistion.height / 2,
+      lockPosition.left + lockPosition.width / 2,
+      lockPosition.top + lockPosition.height / 2,
       e.pageX,
       e.pageY
     );
@@ -1282,7 +1285,7 @@ startBtn.addEventListener("click", function () {
       deg <= Number(activeLockPosition) + threshold &&
       deg >= Number(activeLockPosition) - threshold
     ) {
-      lockContainer.querySelector(".outerCircle").classList.add("shakeCricle");
+      lockContainer.querySelector(".outerCircle").classList.add("shakeCircle");
       if (!setUnlockTimer) {
         unlockTimer = setTimeout(function () {
           if (pin) {
@@ -1294,11 +1297,11 @@ startBtn.addEventListener("click", function () {
               pin.classList.add("current");
               lockContainer
                 .querySelector(".outerCircle")
-                .classList.add("sucess");
+                .classList.add("success");
               setTimeout(function () {
                 lockContainer
                   .querySelector(".outerCircle")
-                  .classList.remove("sucess");
+                  .classList.remove("success");
               }, 2000);
             }
             lockContainer
@@ -1311,7 +1314,7 @@ startBtn.addEventListener("click", function () {
     } else {
       lockContainer
         .querySelector(".outerCircle")
-        .classList.remove("shakeCricle");
+        .classList.remove("shakeCircle");
       clearTimeout(unlockTimer);
       setUnlockTimer = false;
     }
@@ -1338,7 +1341,7 @@ function mouseAngle(cx, cy, ex, ey) {
 function wonGame() {
   startGameContainer.style.display = "flex";
   gameDescription.style.display = "none";
-  succesText.style.display = "block";
+  successText.style.display = "block";
   startBtn.style.display = "none";
   enterRoom.style.display = "block";
   lockBodyBg.style.display = "none";
@@ -1361,11 +1364,11 @@ function gameTimerCountDown() {
   }, 13000);
 }
 
-//Piano minigame
+//Piano mini game
 const pianoBody = document.getElementById("pianoBody");
 
 //WHITE KEYS
-const noteFR = document.getElementById("keyFR"); //KEYO1
+const noteFR = document.getElementById("keyFR"); //KEY01
 const noteGR = document.getElementById("keyGR"); //KEY03
 const noteAR = document.getElementById("keyAR"); //KEY05
 const noteBR = document.getElementById("keyBR"); //KEY07
@@ -1382,7 +1385,7 @@ const noteDL = document.getElementById("keyDL"); //KEY22
 const noteEL = document.getElementById("keyEL"); //KEY24
 
 //BLACK KEYS
-const blackNoteFR = document.getElementById("blackFR"); //KEYO2
+const blackNoteFR = document.getElementById("blackFR"); //KEY02
 const blackNoteGR = document.getElementById("blackGR"); //KEY04
 const blackNoteAR = document.getElementById("blackAR"); //KEY06
 const blackNoteCR = document.getElementById("blackCR"); //KEY09

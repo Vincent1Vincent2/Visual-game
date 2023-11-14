@@ -736,6 +736,7 @@
 
 .outcomeText {
   font-size: 8rem;
+  display: none;
 }
 
 #countDownNumber {
@@ -781,7 +782,7 @@
   border-radius: 100%;
 }
 
-.shakeCricle:hover {
+.shakeCircle:hover {
   animation: shake 3s ease-in-out;
 }
 @keyframes shake {
@@ -990,11 +991,11 @@
   }
 }
 
-.outerCircle.sucess {
-  animation: sucess 0.2s linear;
+.outerCircle.success {
+  animation: success 0.2s linear;
 }
 
-@keyframes sucess {
+@keyframes success {
   0% {
     border: 20px solid #77dd77;
     outline: #77dd77;
@@ -1186,11 +1187,11 @@
   width: 20px;
 }
 .blackKey:hover {
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(99, 99, 99);
 }
 
 .blackHover {
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(99, 99, 99);
 }
 
 #blackFR {
