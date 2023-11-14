@@ -1935,4 +1935,17 @@ window.addEventListener("keyup", function (event) {
   }
 });
 
+const ipodContainer = document.getElementById("ipodContainer");
+const menuBackBtn = document.getElementById("menuBack");
+const playPauseBtn = document.getElementById("playPause");
+const ipodScreen = document.getElementById("ipodScreen");
+const settingsScreen = document.getElementById("settingsScreen");
+const deviceInfoButton = document.getElementById("deviceInfoButton");
+const darkModeButton = document.getElementById("darkModeButton");
+const menuButtons = document.getElementById("menuButtons");
+const settingsButton = document.getElementById("settingsButton");
+const photoButton = document.getElementById("photoButton");
+const videoButton = document.getElementById("videoButton");
+const menuButton = document.getElementById("menuButton");
+
 startGame();
