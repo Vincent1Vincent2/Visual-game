@@ -1269,7 +1269,7 @@
   left: 41.35%;
   top: 53.5%;
   padding: 1rem 2.5rem;
-  border: solid;
+  border: none;
   background-color: transparent;
   cursor: pointer;
 }
@@ -1337,7 +1337,7 @@
 }
 
 .forward {
-  left: 64.5%;
+  left: 59%;
 }
 
 .forward:hover,
@@ -1345,6 +1345,76 @@
   color: rgba(99, 178, 247, 0.57);
 }
 
-.fillBlack {
-  fill: black;
+#ipodPlayer {
+  display: block;
+}
+
+#albumCover {
+  position: absolute;
+  top: 24%;
+  left: 41.5%;
+  width: 200px;
+  z-index: 2;
+}
+
+#albumInfo {
+  position: absolute;
+  top: 26.65%;
+  left: 51%;
+  z-index: 2;
+}
+
+.trackInfo {
+  font-size: 1.55rem;
+  padding: 0.5rem;
+}
+
+#playTimeBar {
+  position: absolute;
+  top: 43%;
+  left: 41.5%;
+  appearance: none;
+  width: 300px;
+  height: 25px;
+  background-color: rgb(173, 210, 230);
+  z-index: 2;
+}
+
+#playTimeBar::-webkit-slider-thumb {
+  appearance: none;
+  background-color: rgb(68, 68, 68);
+  height: 25px;
+  width: 20px;
+}
+
+.time {
+  font-size: 1.55rem;
+  z-index: 2;
+}
+
+#currentTime {
+  position: absolute;
+  top: 46%;
+  left: 41.5%;
+}
+
+#duration {
+  position: absolute;
+  top: 46%;
+  left: 52.15%;
+}
+
+#playMusicBtn {
+  padding: 1.25rem 2.2rem;
+  position: absolute;
+  top: 83.5%;
+  left: 49%;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#settingsScreen,
+#menuButtons {
+  display: none;
 }

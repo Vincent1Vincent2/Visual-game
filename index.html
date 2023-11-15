@@ -607,7 +607,31 @@
     <img id="aboutScreen" src="/imgs/ipod/deviceInfoScreen.png" alt="" />
     <img id="bedSideTable" src="/imgs/furniture/bedSideTable.png" alt="" />
     <img id="bed" src="/imgs/furniture/bed.png" alt="" />
+    <div id="ipodPlayer">
+      <img
+        id="albumCover"
+        src="/imgs/ipod/music/Gorillaz/DemonDays/albumCover/GorillazDemonDays.png"
+        alt=""
+      />
+      <div id="albumInfo">
+        <p class="trackInfo">Feel Good, Inc.</p>
 
+        <p class="trackInfo">Gorillaz</p>
+        <p class="trackInfo">Demon Days</p>
+      </div>
+
+      <button id="playMusicBtn"></button>
+      <span id="currentTime" class="time">0:00</span>
+      <input id="playTimeBar" type="range" max="100" value="0" />
+      <span id="duration" class="time">0:00</span>
+      <audio>
+        <source
+          id="trackOne"
+          src="/imgs/ipod/music/Gorillaz/DemonDays/tracks/Feel-Good-Inc.mp3"
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
     <script src="game.js"></script>
   </body>
 </html>
