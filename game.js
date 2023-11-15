@@ -422,8 +422,8 @@ brownRoomBackBDsUsed.addEventListener("click", function () {
 brownDoorOnlyPiano.addEventListener("click", function () {});
 
 useBlueKey.addEventListener("click", function () {
-  useBlueKey.style.top = "58%";
-  useBlueKey.style.left = "-375%";
+  useBlueKey.style.top = "62%";
+  useBlueKey.style.left = "-385%";
   useBlueKey.style.transform =
     "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
   useBlueKey.style.scale = 0.4;
@@ -829,6 +829,7 @@ openBlueDoor.addEventListener("click", function () {
   redKey.style.opacity = 1;
   redKey.style.transition = "opacity 1s";
   ipodContainer.classList.remove("hide");
+  ipodContainer.classList.add("pointer");
   bed.classList.remove("hide");
   bedSideTable.classList.remove("hide");
   updateText(9);
@@ -887,8 +888,8 @@ function isLockPickUsed() {
 }
 
 useRedKey.addEventListener("click", function () {
-  useRedKey.style.top = "58%";
-  useRedKey.style.left = "-275%";
+  useRedKey.style.top = "62%";
+  useRedKey.style.left = "-285%";
   useRedKey.style.transform =
     "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
   useRedKey.style.scale = 0.4;
@@ -1037,8 +1038,8 @@ brownDoorUsePiano.addEventListener("click", function () {
 });
 
 useNoteSheet.addEventListener("click", function () {
-  useNoteSheet.style.top = "35%";
-  useNoteSheet.style.left = "-290%";
+  useNoteSheet.style.top = "48%";
+  useNoteSheet.style.left = "-295%";
   useNoteSheet.style.transform = "rotate3d(0, 8, 3, 45deg)";
   useNoteSheet.style.scale = 0.7;
   useNoteSheet.style.transition = "top 2s, left 2s";
@@ -1106,8 +1107,8 @@ brownRoomBackAllUsed.addEventListener("click", function () {
 });
 
 useGreenKey.addEventListener("click", function () {
-  useGreenKey.style.top = "58%";
-  useGreenKey.style.left = "-75%";
+  useGreenKey.style.top = "62%";
+  useGreenKey.style.left = "-85%";
   useGreenKey.style.transform =
     "rotate(-30deg) scaleX(-1) rotate3d(0, 1, 0, 45deg)";
   useGreenKey.style.scale = 0.4;
@@ -1975,6 +1976,7 @@ aboutScreen.classList.add("hide");
 ipodBackArrow.classList.add("hide");
 
 ipodContainer.addEventListener("click", function () {
+  ipodContainer.classList.remove("pointer");
   ipodContainer.style.top = "20%";
   ipodContainer.style.left = "40%";
   ipodContainer.style.transform = "rotate(0deg)";
@@ -2029,6 +2031,7 @@ ipodBackArrow.addEventListener("click", function () {
   const main = document.querySelector("main");
   main.style.display = "flex";
   ipodBackArrow.classList.add("hide");
+  settingsScreen.classList.add("hide");
   updateText(9);
 });
 

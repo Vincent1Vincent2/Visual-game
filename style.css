@@ -188,7 +188,7 @@
   position: absolute;
   color: white;
   top: 5%;
-  left: 14%;
+  left: 25%;
   font-size: 1.5rem;
 }
 
@@ -677,7 +677,7 @@
   cursor: pointer;
   position: absolute;
   scale: 1.2;
-  top: 35%;
+  top: 43%;
   left: 44%;
   transition: all 0.3s;
   visibility: hidden;
@@ -1166,7 +1166,7 @@
   justify-content: center;
   align-items: end;
   text-align: center;
-  width: 600px;
+  width: 745px;
   height: 150px;
   background-color: rgb(59, 59, 59);
 }
@@ -1204,54 +1204,54 @@
 
 #blackFR {
   position: absolute;
-  top: 42.2%;
-  left: 35.95%;
+  top: 43.7%;
+  left: 36.3%;
 }
 #blackGR {
   position: absolute;
   left: 38.5%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackAR {
   position: absolute;
   left: 42.75%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackCR {
   position: absolute;
   left: 45%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackDR {
   position: absolute;
   left: 47.25%;
-  top: 42.2%;
+  top: 43.7%;
 }
 
 #blackFL {
   position: absolute;
   left: 51.7%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackGL {
   position: absolute;
   left: 53.95%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackAL {
   position: absolute;
   left: 56.2%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackCL {
   position: absolute;
   left: 60.55%;
-  top: 42.2%;
+  top: 43.7%;
 }
 #blackDL {
   position: absolute;
   left: 62.8%;
-  top: 42.2%;
+  top: 43.7%;
 }
 
 #ipodContainer {
@@ -1261,6 +1261,10 @@
   transform: rotate3d(10, -1, 10, 60deg);
   scale: 0.45;
   z-index: 2;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .hide {
@@ -1373,7 +1377,7 @@
 #albumInfo {
   position: absolute;
   top: 26.65%;
-  left: 53%;
+  left: 52%;
   z-index: 2;
 }
 
