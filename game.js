@@ -25,6 +25,7 @@ const brownRoomBackPianoAfterBoth = document.getElementById(
 const brownRoomBackAllUsed = document.getElementById("brownRoomBackAllUsed"); //CLICK (BACK ARROW)
 const blueRoomBack = document.getElementById("blueRoomBack"); //CLICK (BACK ARROW)
 const redRoomBack = document.getElementById("redRoomBack"); //CLICK (BACK ARROW)
+const ipodBackArrow = document.getElementById("ipodBackArrow");
 const blueKey = document.getElementById("blueKey"); //Click (ITEM)
 const useBlueKey = document.getElementById("useBlueKey"); //Click (ITEM)
 const redKey = document.getElementById("redKey"); //Click (ITEM)
@@ -78,6 +79,9 @@ const pianoAfterNoteSheetYes = document.getElementById(
   "pianoAfterNoteSheetYes"
 ); //Click //Click (FURNITURE)
 const playPiano = document.getElementById("playPiano");
+const bed = document.getElementById("bed");
+const bedSideTable = document.getElementById("bedSideTable");
+
 //Buttons for the lock pick game when you loose or win
 const startGameContainer = document.querySelector(".startGameContainer");
 const gameInfo = document.getElementById("gameInfo");
@@ -824,6 +828,9 @@ openBlueDoor.addEventListener("click", function () {
   redKey.style.visibility = "visible";
   redKey.style.opacity = 1;
   redKey.style.transition = "opacity 1s";
+  ipodContainer.classList.remove("hide");
+  bed.classList.remove("hide");
+  bedSideTable.classList.remove("hide");
   updateText(9);
 });
 
@@ -866,6 +873,8 @@ blueRoomBack.addEventListener("click", function () {
   brownRoomBg.style.visibility = "hidden";
   brownRoomBg.style.opacity = 0;
   brownRoomBg.style.transition = "opacity .8s";
+  bed.classList.add("hide");
+  bedSideTable.classList.add("hide");
   isLockPickUsed();
 });
 
@@ -1187,7 +1196,7 @@ const optionTexts = [
   },
   {
     id: 9,
-    text: "There on the floor! A red key.",
+    text: "There on the bed! A red key and whats that on the bed side table?",
   },
   {
     id: 10,
@@ -1937,6 +1946,7 @@ window.addEventListener("keyup", function (event) {
 
 const ipodContainer = document.getElementById("ipodContainer");
 const ipodSvg = document.getElementById("ipodSvg");
+const ipodInstruction = document.getElementById("ipodInstruction");
 const menuBackBtn = document.getElementById("menuBackBtn");
 const playPauseBtn = document.getElementById("playPauseBtn");
 const ipodScreen = document.getElementById("ipodScreen");
@@ -1947,15 +1957,22 @@ const menuButtons = document.getElementById("menuButtons");
 const settingsButton = document.getElementById("settingsButton");
 const photoButton = document.getElementById("photoButton");
 const videoButton = document.getElementById("videoButton");
-const menuButton = document.getElementById("menuButton");
+const musicButton = document.getElementById("musicButton");
 const photoContainer = document.getElementById("photoContainer");
 const aboutScreen = document.getElementById("aboutScreen");
+const ipodPlayer = document.getElementById("ipodPlayer");
 
+ipodContainer.classList.add("hide");
+ipodInstruction.classList.add("hide");
+bed.classList.add("hide");
+bedSideTable.classList.add("hide");
+ipodPlayer.classList.add("hide");
 menuBackBtn.classList.add("hide");
 playPauseBtn.classList.add("hide");
 settingsScreen.classList.add("hide");
 photoContainer.classList.add("hide");
 aboutScreen.classList.add("hide");
+ipodBackArrow.classList.add("hide");
 
 ipodContainer.addEventListener("click", function () {
   ipodContainer.style.top = "20%";
@@ -1963,6 +1980,56 @@ ipodContainer.addEventListener("click", function () {
   ipodContainer.style.transform = "rotate(0deg)";
   ipodContainer.style.scale = "1.2";
   ipodSvg.style.width = "500px";
+  ipodInstruction.classList.remove("hide");
+  const main = document.querySelector("main");
+  main.style.display = "none";
+  bed.classList.add("hide");
+  bedSideTable.classList.add("hide");
+  ipodBackArrow.classList.remove("hide");
+});
+
+ipodBackArrow.addEventListener("click", function () {
+  openBlueDoor.style.visibility = "hidden";
+  openBlueDoor.style.opacity = 0;
+  openBlueDoor.style.transition = "opacity 1.9s";
+  blueDoorBg.style.visibility = "hidden";
+  blueDoorBg.style.opacity = 0;
+  blueDoorBg.style.transition = "opacity .5s";
+  redDoor.style.visibility = "hidden";
+  redDoor.style.opacity = 0;
+  redDoor.style.transition = "opacity .9s";
+  redDoorBg.style.visibility = "hidden";
+  redDoorBg.style.opacity = 0;
+  redDoorBg.style.transition = "opacity .9s";
+  greenDoor.style.visibility = "hidden";
+  greenDoor.style.opacity = 1;
+  greenDoor.style.transition = "opacity 1.2s";
+  greenDoorBg.style.visibility = "hidden";
+  greenDoorBg.style.opacity = 0;
+  greenDoorBg.style.transition = "opacity 1.2s";
+  brownDoorOnlyPiano.style.opacity = 0;
+  brownDoorOnlyPiano.style.transition = "all .5s";
+  brownDoorOnlyPiano.style.visibility = "hidden";
+  brownDoorBg.style.opacity = 0;
+  brownDoorBg.style.visibility = "hidden";
+  brownDoorBg.style.transition = "opacity .5s";
+  startRoomBg.style.visibility = "hidden";
+  startRoomBg.style.opacity = 0;
+  startRoomBg.style.transition = "opacity 1.5s";
+  brownRoomBg.style.visibility = "visible";
+  brownRoomBg.style.opacity = 1;
+  brownRoomBg.style.transition = "opacity .8s";
+  redKey.style.visibility = "visible";
+  redKey.style.opacity = 1;
+  redKey.style.transition = "opacity 1s";
+  ipodContainer.style.display = "none";
+  ipodInstruction.classList.add("hide");
+  bed.classList.remove("hide");
+  bedSideTable.classList.remove("hide");
+  const main = document.querySelector("main");
+  main.style.display = "flex";
+  ipodBackArrow.classList.add("hide");
+  updateText(9);
 });
 
 menuBackBtn.addEventListener("click", function () {
@@ -1970,6 +2037,10 @@ menuBackBtn.addEventListener("click", function () {
   photoContainer.classList.add("hide");
   menuBackBtn.classList.add("hide");
   aboutScreen.classList.add("hide");
+  ipodPlayer.classList.add("hide");
+  trackOne.pause();
+  cancelAnimationFrame(rAF);
+  trackOne.currentTime = 0;
 });
 
 settingsButton.addEventListener("click", function () {
@@ -1982,6 +2053,12 @@ photoButton.addEventListener("click", function () {
   hideMenuBtns();
   photoContainer.classList.remove("hide");
   menuBackBtn.classList.remove("hide");
+});
+
+musicButton.addEventListener("click", function () {
+  hideMenuBtns();
+  menuBackBtn.classList.remove("hide");
+  ipodPlayer.classList.remove("hide");
 });
 
 darkModeButton.addEventListener("click", function () {});

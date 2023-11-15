@@ -168,6 +168,13 @@
   visibility: hidden;
 }
 
+#ipodBackArrow {
+  cursor: pointer;
+  position: absolute;
+  top: 18%;
+  left: 35%;
+}
+
 #inventory {
   position: absolute;
   top: 25%;
@@ -206,9 +213,10 @@
 
 #redKey {
   position: absolute;
-  top: 80%;
-  left: -310%;
+  top: 75%;
+  left: -290%;
   scale: 0.6;
+  z-index: 2;
   cursor: pointer;
   visibility: hidden;
 }
@@ -1252,7 +1260,6 @@
   left: 33.5%;
   transform: rotate3d(10, -1, 10, 60deg);
   scale: 0.45;
-  visibility: visible;
   z-index: 2;
 }
 
@@ -1302,6 +1309,16 @@
   z-index: 1;
 }
 
+#ipodInstruction {
+  font-size: 4.5rem;
+  width: 630px;
+  z-index: 2;
+  position: absolute;
+  top: 15%;
+  left: 65%;
+  text-align: left;
+}
+
 #ipodPhoto {
   position: absolute;
   top: 20%;
@@ -1343,10 +1360,6 @@
 .forward:hover,
 .back:hover {
   color: rgba(99, 178, 247, 0.57);
-}
-
-#ipodPlayer {
-  display: block;
 }
 
 #albumCover {
@@ -1401,20 +1414,16 @@
 #duration {
   position: absolute;
   top: 46%;
-  left: 55.15%;
+  left: 52.15%;
 }
 
 #playMusicBtn {
   padding: 1.25rem 2.2rem;
   position: absolute;
   top: 83.5%;
-  left: 51.4%;
+  left: 49%;
   background-color: transparent;
   cursor: pointer;
   z-index: 2;
-}
-
-#settingsScreen,
-#menuButtons {
-  display: none;
+  border: none;
 }
