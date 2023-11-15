@@ -2026,23 +2026,24 @@ function showSlides(slideNumber) {
 
 const playMusicBtn = document.getElementById("playMusicBtn");
 const trackOne = document.getElementById("trackOne");
+const currentTimeCont = document.getElementById("currentTime");
 const durationCont = document.getElementById("duration");
 const playTimeBar = document.getElementById("playTimeBar");
+let rAF = null;
 
-// playMusicBtn.addEventListener("click", function () {
-//   if (playState === "play") {
-//     trackOne.play();
-//   } else {
-//     trackOne.pause();
-//     playState = "play";
-//   }
-// });
+const whilePlaying = () => {
+  playTimeBar.value = Math.floor(trackOne.currentTime);
+  currentTimeCont.textContent = calculateTime(playTimeBar.value);
+  rAF = requestAnimationFrame(whilePlaying);
+};
 
 function playTrackOne() {
   if (trackOne.paused) {
     trackOne.play();
+    requestAnimationFrame(whilePlaying);
   } else {
     trackOne.pause();
+    cancelAnimationFrame(rAF);
     trackOne.currentTime = 0;
   }
 }
@@ -2053,6 +2054,14 @@ playMusicBtn.addEventListener("click", function () {
 
 trackOne.addEventListener("loadedmetadata", function () {
   displayTrackOneDuration(trackOne.duration);
+});
+
+playTimeBar.addEventListener("change", () => {
+  trackOne.currentTime = playTimeBar.value;
+});
+
+trackOne.addEventListener("timeupdate", () => {
+  playTimeBar.value = Math.floor(trackOne.currentTime);
 });
 
 const calculateTime = (secs) => {
