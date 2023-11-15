@@ -2024,4 +2024,60 @@ function showSlides(slideNumber) {
   slides[slideIndex - 1].style.display = "block";
 }
 
+const playMusicBtn = document.getElementById("playMusicBtn");
+const trackOne = document.getElementById("trackOne");
+const durationCont = document.getElementById("duration");
+const playTimeBar = document.getElementById("playTimeBar");
+
+// playMusicBtn.addEventListener("click", function () {
+//   if (playState === "play") {
+//     trackOne.play();
+//   } else {
+//     trackOne.pause();
+//     playState = "play";
+//   }
+// });
+
+function playTrackOne() {
+  if (trackOne.paused) {
+    trackOne.play();
+  } else {
+    trackOne.pause();
+    trackOne.currentTime = 0;
+  }
+}
+
+playMusicBtn.addEventListener("click", function () {
+  playTrackOne();
+});
+
+trackOne.addEventListener("loadedmetadata", function () {
+  displayTrackOneDuration(trackOne.duration);
+});
+
+const calculateTime = (secs) => {
+  const minutes = Math.floor(secs / 60);
+  const seconds = Math.floor(secs % 60);
+  const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+  return `${minutes}:${returnedSeconds}`;
+};
+
+const displayTrackOneDuration = () => {
+  durationCont.textContent = calculateTime(trackOne.duration);
+};
+
+const setPlayTimeBarMax = () => {
+  playTimeBar.max = Math.floor(trackOne.duration);
+};
+
+if (trackOne.readyState > 0) {
+  displayTrackOneDuration();
+  setPlayTimeBarMax();
+} else {
+  trackOne.addEventListener("loadedmetadata", function () {
+    displayTrackOneDuration();
+    setPlayTimeBarMax();
+  });
+}
+
 startGame();

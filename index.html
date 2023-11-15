@@ -624,13 +624,12 @@
       <span id="currentTime" class="time">0:00</span>
       <input id="playTimeBar" type="range" max="100" value="0" />
       <span id="duration" class="time">0:00</span>
-      <audio>
-        <source
-          id="trackOne"
-          src="/imgs/ipod/music/Gorillaz/DemonDays/tracks/Feel-Good-Inc.mp3"
-          type="audio/mpeg"
-        />
-      </audio>
+      <audio
+        id="trackOne"
+        src="/imgs/ipod/music/Gorillaz/DemonDays/tracks/Feel-Good-Inc.mp3"
+        preload="metadata"
+        loop
+      ></audio>
     </div>
     <script src="game.js"></script>
   </body>

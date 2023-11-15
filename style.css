@@ -1360,7 +1360,7 @@
 #albumInfo {
   position: absolute;
   top: 26.65%;
-  left: 51%;
+  left: 53%;
   z-index: 2;
 }
 
@@ -1401,14 +1401,14 @@
 #duration {
   position: absolute;
   top: 46%;
-  left: 52.15%;
+  left: 55.15%;
 }
 
 #playMusicBtn {
   padding: 1.25rem 2.2rem;
   position: absolute;
   top: 83.5%;
-  left: 49%;
+  left: 51.4%;
   background-color: transparent;
   cursor: pointer;
   z-index: 2;
